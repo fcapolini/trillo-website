@@ -1,0 +1,18 @@
+<lib
+  :header_hEm=[[3]]
+>
+  <style>
+    .kit-header {
+      text-align: center;
+    }
+    .kit-header > div {
+      display: flex;
+      align-items: center;
+      height: [[header_hEm]]em;
+    }
+  </style>
+
+  <:define tag="kit-header" class="kit-header">
+    <div><:slot name="default"/></div>
+  </:define>
+</lib>

@@ -1,0 +1,35 @@
+<lib
+  :hero_bg="#0b3767ff"
+>
+  <style>
+    .kit-hero {
+      background-color: aliceblue;
+      font-size: 1.2rem;
+      padding: 1.75em 3em;
+      border-top: 1px solid [[page_bd1]];
+      border-bottom: 1px solid [[page_bd1]];
+      text-align: center;
+      transition: padding .1s;
+    }
+    .kit-hero h1 {
+      font-weight: 700;
+      margin: 0rem 0;
+      color: #222;
+    }
+    .kit-hero p {
+      display: inline-block;
+      max-width: 21em;
+      font-weight: 300;
+      line-height: 1.5em;
+      color: #444;
+    }
+    @media only screen and (min-width: [[grid_rowData[2].min]]px) {
+      .kit-hero  {
+        font-size: 1.5rem;
+        padding: 3em;
+      }
+    }
+  </style>
+
+  <:define tag="kit-hero" class="kit-hero"></:define>
+</lib>
