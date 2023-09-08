@@ -1,7 +1,7 @@
 <lib>
   <style>
     .kit-search {
-      padding: .5em 0em;
+      padding: .5em 1em;
     }
     .kit-search > input {
       font-size: 1rem;
@@ -14,7 +14,7 @@
     }
   </style>
 
-  <:define tag="kit-search" class="kit-search">
-    <input type="search">
+  <:define tag="kit-search" class="kit-search" :placeholder="">
+    <input type="search" placeholder=[[placeholder]]>
   </:define>
 </lib>

@@ -1,11 +1,19 @@
-<lib
-  :hero_bg="#0b3767ff"
->
+<lib>
+  <:import src="page.htm"/>
+  <:import src="grid.htm"/>
+  <:import src="palette.htm"/>
+  <!--- https://mediamodifier.com/vector/Minimalistic-SVG-Light-orange-Abstract-Background-62342055bfb930a07de2be21 -->
   <style>
     .kit-hero {
-      background-color: aliceblue;
+      background-color: #f6b267;
+      background-image: url('/assets/Asset-104.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      
+      color: #fff;
       font-size: 1.2rem;
-      padding: 1.75em 3em;
+      padding: 1.75em 2em;
       border-top: 1px solid [[page_bd1]];
       border-bottom: 1px solid [[page_bd1]];
       text-align: center;
@@ -14,14 +22,14 @@
     .kit-hero h1 {
       font-weight: 700;
       margin: 0rem 0;
-      color: #222;
+      text-shadow: rgba(0,0,0,.2) 1px 1px;
     }
     .kit-hero p {
       display: inline-block;
       max-width: 21em;
       font-weight: 300;
       line-height: 1.5em;
-      color: #444;
+      text-shadow: rgba(0,0,0,.1) 0px 1px;
     }
     @media only screen and (min-width: [[grid_rowData[2].min]]px) {
       .kit-hero  {
