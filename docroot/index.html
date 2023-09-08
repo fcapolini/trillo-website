@@ -6,6 +6,23 @@
     <:import src="/.kit/bootstrap/extras/hero.htm"/>
     <:import src="/.kit/bootstrap/opt/marked-js.htm"/>
     <style>
+      a {
+        /* color: #EF6F4C; */
+        color: #D76448;
+      }
+      code {
+        background-color: #ffe4c6;
+        color: initial;
+        padding: .15em .25em;
+        border: 1px solid #ffd09d;
+        border-radius: 5px;
+      }
+      pre > code {
+        background-color: initial;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+      }
       .bs-hero {
         background-color: #f6b267;
         background-image: url('/assets/Asset-104.svg');
@@ -13,20 +30,6 @@
       .bs-hero b {
         font-weight: 700;
       }
-      /* .bs-hero > div {
-        height: .75em;
-      }
-      .bs-hero code {
-        font-family: monospace;
-        font-size: .75em;
-        background-color: white;
-        padding: .5em 1em;
-        margin-top: .5em;
-      }
-      .bs-hero .bi {
-        color: initial;
-        vertical-align: -3%;
-      } */
       .section {
         padding: 1em 0;
       }
@@ -89,6 +92,14 @@
           <bs-card :header=" ">
             <b :slot="header">Reactive HTML &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
             <marked-js :source='
+Add [presentation logic](#) to plain HTML using:
+
+* `:`-prefixed attributes to declare [logic values](#),
+* `[ [...]]` blocks to declare [reactive expressions](#).
+
+This code displays a live seconds counter, and it&apos;s a
+complete page you can deliver <i>as is</i> with a Trillo server:
+
 ```
 <html>
   <body :count="[ [0]]"
@@ -107,6 +118,9 @@
           <bs-card :header=" ">
             <b :slot="header">Indexable Pages &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
             <marked-js :source='
+Page logic [starts in the server](#) to generate content-ready pages,
+and [continues in the client](#) to support modern user experiences.
+
 ```
 ```
             '/>
