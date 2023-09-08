@@ -1,21 +1,49 @@
-<html>
-  <head :pageFontFamily="Roboto">
-    <:import src="kit/page.htm"/>
-    <:import src="kit/grid.htm"/>
-    <:import src="kit/header.htm"/>
-    <:import src="kit/hero.htm"/>
-    <:import src="kit/search.htm"/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <:import src="/.kit/bootstrap/all.htm"/>
+    <:import src="/.kit/bootstrap/icons.htm"/>
+    <:import src="/.kit/bootstrap/extras/hero.htm"/>
+    <:import src="/.kit/bootstrap/opt/marked-js.htm"/>
+    <style>
+      .bs-hero {
+        background-color: #f6b267;
+        background-image: url('/assets/Asset-104.svg');
+      }
+      .bs-hero > div {
+        height: .75em;
+      }
+      .bs-hero code {
+        font-family: monospace;
+        font-size: .75em;
+        background-color: white;
+        padding: .5em 1em;
+        margin-top: .5em;
+      }
+      .bs-hero .bi {
+        color: initial;
+        vertical-align: -3%;
+      }
+    </style>
   </head>
   <body>
-    <kit-header>
-    </kit-header>
-    <kit-hero>
-      <h1>Trillo.js</h1>
+    <bs-navbar :dark="[[true]]">
+      <span :slot="brand">Trillo.js</span>
+    </bs-navbar>
+    
+    <bs-hero>
+      <h1>
+        Trillo
+      </h1>
       <p>
-        a web framework for Node.js and the browser
+        a web framework for Node and the browser
         that adds reactivity to HTML itself
       </p>
-      <kit-search :placeholder="search docs"/>
-    </kit-hero>
+      <!-- <div/>
+      <code>
+        <bs-icon :icon="chevron-right"/>
+        npm install trillo
+      </code> -->
+    </bs-hero>
   </body>
 </html>
