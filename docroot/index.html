@@ -10,7 +10,10 @@
         background-color: #f6b267;
         background-image: url('/assets/Asset-104.svg');
       }
-      .bs-hero > div {
+      .bs-hero b {
+        font-weight: 700;
+      }
+      /* .bs-hero > div {
         height: .75em;
       }
       .bs-hero code {
@@ -23,12 +26,21 @@
       .bs-hero .bi {
         color: initial;
         vertical-align: -3%;
+      } */
+      .section {
+        padding: 1em 0;
+      }
+      .card {
+        margin: 1em 0;
+        /* box-shadow: rgba(0,0,0,.2) 0px 1px 4px; */
       }
     </style>
   </head>
+
   <body>
     <bs-navbar :dark="[[true]]">
-      <span :slot="brand">Trillo.js</span>
+      <span :slot="brand">Trillo</span>
+      <bs-navbar-search :slot="extra"/>
     </bs-navbar>
     
     <bs-hero>
@@ -36,8 +48,8 @@
         Trillo
       </h1>
       <p>
-        a web framework for Node and the browser
-        that adds reactivity to HTML itself
+        the web framework for Node and the browser that
+        <b>adds reactivity to HTML itself</b>
       </p>
       <!-- <div/>
       <code>
@@ -45,5 +57,139 @@
         npm install trillo
       </code> -->
     </bs-hero>
+
+<!---    <bs-container :class-section>
+      <bs-accordion>
+        <bs-accordion-item :header="Reactive HTML">
+            <marked-js :source='
+```
+<html>
+  <body :count="[ [0]]"
+        :did-init="[ [
+          setInterval(() => count++, 1000);
+        ]]">
+    Seconds: [ [count]]
+  </body>
+</html>
+```
+'/>
+        </bs-accordion-item>
+        <bs-accordion-item :header="Indexable Pages">
+        </bs-accordion-item>
+        <bs-accordion-item :header="Reusable Code">
+        </bs-accordion-item>
+        <bs-accordion-item :header="Component Kits">
+        </bs-accordion-item>
+      </bs-accordion>
+    </bs-container>-->
+
+    <bs-container :class-section>
+      <bs-row>
+        <bs-col :size="md">
+          <bs-card :header=" ">
+            <b :slot="header">Reactive HTML &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
+            <marked-js :source='
+```
+<html>
+  <body :count="[ [0]]"
+        :did-init="[ [
+          setInterval(() => count++, 1000);
+        ]]">
+    Seconds: [ [count]]
+  </body>
+</html>
+```
+'/>
+          </bs-card>
+        </bs-col>
+
+        <bs-col :size="md">
+          <bs-card :header=" ">
+            <b :slot="header">Indexable Pages &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
+            <marked-js :source='
+```
+```
+            '/>
+          </bs-card>
+        </bs-col>
+      </bs-row>
+
+      <bs-row>
+        <bs-col :size="md">
+          <bs-card :header=" ">
+            <b :slot="header">Reusable Code &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
+          </bs-card>
+        </bs-col>
+
+        <bs-col :size="md">
+          <bs-card :header=" ">
+            <b :slot="header">Component Kits &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
+          </bs-card>
+        </bs-col>
+      </bs-row>
+    </bs-container>
+
+<!---    <bs-container><marked-js :source='
+# Reactive HTML
+
+With Trillo you can express presentation logic directly in your HTML markup, using:
+
+* `:`-prefixed attributes to declare [logic values](#),
+* `[ [...]]` [reactive expressions](#) to apply results to your page.
+
+Here is what it looks like in practice:
+
+```
+<html>
+  <body :count="[ [0]]"
+        :did-init="[ [ setInterval(() => count++, 1000); ]]">
+    Seconds: [ [count]]
+  </body>
+</html>
+```
+'/>
+    </bs-container>
+
+    <bs-container><marked-js :source='
+# Indexable Pages
+
+JavaScript-based reactive frameworks like [React]() and [Vue]() create page
+markup dynamically in the browser. This means search engines have no content
+to index, unless you overcome this with some retrofitted
+solution — not for the faint of heart!
+
+Trillo, on the other hand, automatically runs page logic in both the server — 
+to deliver content-ready pages — and in the client — to support modern
+user experiences.
+
+...
+
+```
+...
+```
+'/>
+    </bs-container>
+
+    <bs-container><marked-js :source='
+# Reusable Code
+
+...
+
+```
+...
+```
+'/>
+    </bs-container>
+
+    <bs-container><marked-js :source='
+# Component Kits
+
+...
+
+```
+...
+```
+'/>
+    </bs-container> -->
   </body>
 </html>
