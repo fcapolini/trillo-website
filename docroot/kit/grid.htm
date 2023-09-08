@@ -30,7 +30,13 @@
     align-items: end;
   }
   .kit-grid.row {
+    flex-direction: column;
     padding: 0 [[grid_rowData[0].pd]]em;
+  }
+  @media only screen and (min-width: [[grid_rowData[1].min]]px) {
+    .kit-grid.row:not(.v) {
+      flex-direction: row;
+    }
   }
 </style>
 
@@ -55,7 +61,7 @@
 
 <style>
   @media only screen and (min-width: [[grid_rowData[4].min]]px) {
-      .lib-row {
+      .kit-grid.row {
         max-width: [[grid_rowData[4].min]]px;
         margin: 0 auto;
       }
