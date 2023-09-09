@@ -1,0 +1,19 @@
+<lib>
+
+  <!--- https://github.com/markedjs/marked -->
+  <:import src="../res/marked/marked.min.js" as="script"/>
+  <script>
+    marked.setOptions({
+      highlight: function(code, lang, callback) {
+        if (window.hljs) {
+          return window.hljs.highlight(code, { language: lang }).value;
+        }
+      }
+    });
+  </script>
+
+  <:define tag="marked-js" class="marked-js"
+    :source=""
+    :handle-source=[[__dom.innerHTML = window.marked.parse(source)]]/>
+
+</lib>
