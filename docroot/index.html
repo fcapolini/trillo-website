@@ -80,6 +80,11 @@
   Seconds: [[open]]count]]
 </div>'/>
               </div></li>
+              <li class="list-group-item demo">
+                <div :count="[[0]]" :did-init="[[ setInterval(() => count++, 1000); ]]">
+                  Seconds: [[count]]
+                </div>
+              </li>
             </ul>
           </app-card>
         </div>
@@ -94,13 +99,21 @@
                 </p>
               </li>
               <li class="list-group-item code"><div>
-<highlight-js :open="[['[' + '[']]" :source='<div :count="[[open]]0]]"
-     :did-init="[[open]]
-       setInterval(() => count++, 1000);
-     ]]">
-  Seconds: [[open]]count]]
-</div>'/>
+<highlight-js :open="[['[' + '[']]" :source='<:data-source :aka="cat"
+              :url="/cat-facts"/>
+[[open]]cat.content.fact]]
+<button :on-click="[[open]]
+  () => cat.trigger()
+]]">Next</button>'/>
               </div></li>
+              <li class="list-group-item demo">
+                <:data-source :aka="cat"
+                              :url="/cat-facts"/>
+                <div>[[cat.content.fact]]</div>
+                <button :on-click="[[
+                  () => cat.trigger()
+                ]]">Next</button>
+              </li>
             </ul>
           </app-card>
         </div>
