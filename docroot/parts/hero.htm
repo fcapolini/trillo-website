@@ -1,0 +1,48 @@
+<lib>
+  <style data-name="app-hero">
+    .app-hero {
+      background-color: #f6b267;
+      background-image: url('/assets/Asset-104.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+
+      font-size: 1.25rem;
+      padding: 1.75em 2em;
+      margin-bottom: 3rem;
+
+      text-align: center;
+      transition: padding .1s;
+    }
+    .app-hero h1 {
+      font-weight: 700;
+      margin: 0rem 0 .66em 0;
+    }
+    .app-hero p {
+      display: inline-block;
+      max-width: 22em;
+      font-weight: 300;
+    }
+    .app-hero b {
+      font-weight: 700;
+    }
+    @media only screen and (min-width: 600px) {
+      .app-hero  {
+        font-size: 1.5rem;
+        padding: 3em 2em;
+      }
+      .app-hero h1 {
+        font-size: 2em;
+      }
+    }
+    /* @media only screen and (min-width: 1000px) {
+      .app-hero  {
+        font-size: 1.75rem;
+        padding: 3em;
+      }
+    } */
+  </style>
+
+  <:define tag="app-hero" :class-app-hero>
+  </:define>
+</lib>

@@ -1,209 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <:import src="/.kit/bootstrap/all.htm"/>
-    <:import src="/.kit/bootstrap/icons.htm"/>
-    <:import src="/.kit/bootstrap/extras/hero.htm"/>
-    <:import src="/.kit/bootstrap/opt/marked-js.htm"/>
-    <style>
-      a {
-        /* color: #EF6F4C; */
-        color: #D76448;
-      }
-      code {
-        background-color: #ffe4c6;
-        color: initial;
-        padding: .15em .25em;
-        border: 1px solid #ffd09d;
-        border-radius: 5px;
-      }
-      pre > code {
-        background-color: initial;
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-      }
-      .bs-hero {
-        background-color: #f6b267;
-        background-image: url('/assets/Asset-104.svg');
-      }
-      .bs-hero b {
-        font-weight: 700;
-      }
-      .section {
-        padding: 1em 0;
-      }
-      .card {
-        margin: 1em 0;
-        /* box-shadow: rgba(0,0,0,.2) 0px 1px 4px; */
-      }
-    </style>
+  <head :title="Trillo">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[[title]] • Reactive HTML</title>
+    <!--- https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!--- https://icons8.com/line-awesome -->
+    <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" rel="stylesheet">
+    <:import src="parts/page.htm"/>
+    <:import src="parts/navbar.htm"/>
+    <:import src="parts/hero.htm"/>
+    <:import src="parts/card.htm"/>
   </head>
-
   <body>
-    <bs-navbar :dark="[[true]]">
-      <span :slot="brand">Trillo</span>
-      <bs-navbar-search :slot="extra"/>
-    </bs-navbar>
-    
-    <bs-hero>
-      <h1>
-        Trillo
-      </h1>
+    <app-navbar/>
+
+    <app-hero>
+      <h1>Trillo</h1>
       <p>
         the web framework for Node and the browser that
         <b>adds reactivity to HTML itself</b>
       </p>
-      <!-- <div/>
-      <code>
-        <bs-icon :icon="chevron-right"/>
-        npm install trillo
-      </code> -->
-    </bs-hero>
+    </app-hero>
 
-<!---    <bs-container :class-section>
-      <bs-accordion>
-        <bs-accordion-item :header="Reactive HTML">
-            <marked-js :source='
-```
-<html>
-  <body :count="[ [0]]"
-        :did-init="[ [
-          setInterval(() => count++, 1000);
-        ]]">
-    Seconds: [ [count]]
-  </body>
-</html>
-```
-'/>
-        </bs-accordion-item>
-        <bs-accordion-item :header="Indexable Pages">
-        </bs-accordion-item>
-        <bs-accordion-item :header="Reusable Code">
-        </bs-accordion-item>
-        <bs-accordion-item :header="Component Kits">
-        </bs-accordion-item>
-      </bs-accordion>
-    </bs-container>-->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="app-lead">
+            <p>
+              Using a reactive framework in modern web development can be pretty involved — but it doesn't have to be.
+            </p>
+            <p>
+              Trillo is a groundbreaking alternative which
+              <a href="#">strives&nbsp;for&nbsp;simplicity</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <bs-container :class-section>
-      <bs-row>
-        <bs-col :size="md">
-          <bs-card :header=" ">
-            <b :slot="header">Reactive HTML &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
-            <marked-js :source='
-Add [presentation logic](#) to plain HTML using:
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <app-card>
+            <h5 :slot="header">Reactive HTML</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <p>
+                  You can declare <a href="#">logic values</a> and
+                  <a href="#">reactive expressions</a> using
+                  <span style="text-wrap: nowrap;"><code>:</code>-prefixed</span> attributes and
+                  <code>[&ZeroWidthSpace;[...]]</code> blocks.
+                </p>
+              </li>
+              <li class="list-group-item">
+                <pre>
+<code>&lt;div :count="[&ZeroWidthSpace;[0]]"
+     :did-init="[&ZeroWidthSpace;[
+       setInterval(() => count++, 1000);
+     ]]">
+  Seconds: [&ZeroWidthSpace;[count]]
+&lt;/div></code>
+                </pre>
+              </li>
+            </ul>
+          </app-card>
+        </div>
+        <div class="col-lg-6">
+          <app-card>
+            <h5 :slot="header">Indexable Pages</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <p>
+                  Page logic <a href="#">starts in the server</a> to generate content-ready pages,
+                  and <a href="#">continues in the client</a> to support a modern user experience.
+                </p>
+              </li>
+              <li class="list-group-item">
+                <pre>
+<code></code>
+                </pre>
+              </li>
+            </ul>
+          </app-card>
+        </div>
+      </div>
+    </div>
 
-* `:`-prefixed attributes to declare [logic values](#),
-* `[ [...]]` blocks to declare [reactive expressions](#).
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <app-card>
+            <h5 :slot="header">Reusable Code</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <p>
+                  With <code>&lt;:define></code> you can turn blocks of markup into parametric
+                  <a href="#">custom tags</a>,
+                  ready to be reused across your pages.
+                </p>
+              </li>
+              <li class="list-group-item">
+                <pre>
+<code></code>
+                </pre>
+              </li>
+            </ul>
+          </app-card>
+        </div>
+        <div class="col-lg-6">
+          <app-card>
+            <h5 :slot="header">Component Kits</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <p>
+                  <a href="#">Custom tags</a> can be promoted to
+                  <a href="#">components</a> with default styling,
+                  collected in <a href="#">kits</a> and reusable across projects.
+                  This site uses the <a href="#">Bootstrap Kit</a>.
+                </p>
+              </li>
+              <li class="list-group-item">
+                <pre>
+<code></code>
+                </pre>
+              </li>
+            </ul>
+          </app-card>
+        </div>
+      </div>
+    </div>
 
-This code displays a live seconds counter, and it&apos;s a
-complete page you can deliver <i>as is</i> with a Trillo server:
-
-```
-<html>
-  <body :count="[ [0]]"
-        :did-init="[ [
-          setInterval(() => count++, 1000);
-        ]]">
-    Seconds: [ [count]]
-  </body>
-</html>
-```
-'/>
-          </bs-card>
-        </bs-col>
-
-        <bs-col :size="md">
-          <bs-card :header=" ">
-            <b :slot="header">Indexable Pages &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
-            <marked-js :source='
-Page logic [starts in the server](#) to generate content-ready pages,
-and [continues in the client](#) to support modern user experiences.
-
-```
-```
-            '/>
-          </bs-card>
-        </bs-col>
-      </bs-row>
-
-      <bs-row>
-        <bs-col :size="md">
-          <bs-card :header=" ">
-            <b :slot="header">Reusable Code &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
-          </bs-card>
-        </bs-col>
-
-        <bs-col :size="md">
-          <bs-card :header=" ">
-            <b :slot="header">Component Kits &nbsp;<a href="#"><bs-icon :icon="arrow-right"/></a></b>
-          </bs-card>
-        </bs-col>
-      </bs-row>
-    </bs-container>
-
-<!---    <bs-container><marked-js :source='
-# Reactive HTML
-
-With Trillo you can express presentation logic directly in your HTML markup, using:
-
-* `:`-prefixed attributes to declare [logic values](#),
-* `[ [...]]` [reactive expressions](#) to apply results to your page.
-
-Here is what it looks like in practice:
-
-```
-<html>
-  <body :count="[ [0]]"
-        :did-init="[ [ setInterval(() => count++, 1000); ]]">
-    Seconds: [ [count]]
-  </body>
-</html>
-```
-'/>
-    </bs-container>
-
-    <bs-container><marked-js :source='
-# Indexable Pages
-
-JavaScript-based reactive frameworks like [React]() and [Vue]() create page
-markup dynamically in the browser. This means search engines have no content
-to index, unless you overcome this with some retrofitted
-solution — not for the faint of heart!
-
-Trillo, on the other hand, automatically runs page logic in both the server — 
-to deliver content-ready pages — and in the client — to support modern
-user experiences.
-
-...
-
-```
-...
-```
-'/>
-    </bs-container>
-
-    <bs-container><marked-js :source='
-# Reusable Code
-
-...
-
-```
-...
-```
-'/>
-    </bs-container>
-
-    <bs-container><marked-js :source='
-# Component Kits
-
-...
-
-```
-...
-```
-'/>
-    </bs-container> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>

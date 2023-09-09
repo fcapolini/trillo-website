@@ -1,0 +1,43 @@
+<lib>
+  <style data-name="app-card">
+    .card {
+      padding: 0;
+      margin-bottom: 3rem;
+      margin: 0 .5em 3em .5em;
+      overflow: hidden;
+    }
+    .card-header {
+      background-color: rgba(222, 222, 218, 0.358);
+    }
+    .card-header h5 {
+      margin: .4em 0;
+    }
+    .card-body {
+      padding: 0;
+    }
+    .card-header,
+    .list-group-item {
+      padding-left: 1.33em;
+      padding-right: 1.33em;
+    }
+    .list-group-item {
+      /* background-color: rgba(245, 245, 220, 0.509); */
+    }
+  </style>
+
+  <:define tag="app-card" class="card">
+    <div class="card-header">
+      <:slot name="header"/>
+    </div>
+    <div class="card-body">
+      <:slot name="default"/>
+      <!---
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+      -->
+    </div>
+  </:define>
+</lib>
