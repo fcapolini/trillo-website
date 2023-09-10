@@ -60,7 +60,7 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row gx-3">
         <div class="col-lg-6">
           <app-card>
             <h5 :slot="header">Reactive HTML</h5>
@@ -89,14 +89,15 @@
             </ul>
           </app-card>
         </div>
+
         <div class="col-lg-6">
           <app-card>
             <h5 :slot="header">Indexable Pages</h5>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <p>
-                  Page logic <a href="#">starts in the server</a> to generate content-ready pages,
-                  and <a href="#">continues in the client</a> to support user interaction.
+                  Page logic <a href="#">starts in the server</a>, to generate content-ready pages,
+                  and <a href="#">continues in the client</a>, to support user interaction.
                 </p>
               </li>
               <li class="list-group-item code"><div>
@@ -122,7 +123,7 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row gx-3">
         <div class="col-lg-6">
           <app-card>
             <h5 :slot="header">Reusable Code</h5>
@@ -131,7 +132,7 @@
                 <p>
                   With <code style="text-wrap: nowrap;">&lt;:define></code> you can turn blocks of markup into parametric
                   <a href="#">custom tags</a>,
-                  ready to be reused anywhere in your project.
+                  ready to be reused anywhere in your code.
                 </p>
               </li>
               <li class="list-group-item code"><div>
@@ -145,7 +146,7 @@
 <app-item :k="Drafts" :v="0"/>
 <app-item :k="Spam" :v="2"/>'/>
               </div></li>
-              <li class="list-group-item demo">
+              <li class="list-group-item demo reusability">
                 <:define tag="app-item" :k :v>
                   <span>[[k]]</span>
                   <b :hidden="[[v < 1]]">[[v]]</b>
@@ -159,6 +160,7 @@
             </ul>
           </app-card>
         </div>
+
         <div class="col-lg-6">
           <app-card>
             <h5 :slot="header">Component Kits</h5>
@@ -166,8 +168,9 @@
               <li class="list-group-item">
                 <p>
                   <a href="#">Custom tags</a> can be promoted to
-                  <a href="#">components</a> with default styling, and
-                  collected in <a href="#">kits</a> reusable across projects.
+                  <a href="#">components</a> and
+                  collected in <a href="#">kits</a>,
+                  making them reusable across projects.
                 </p>
               </li>
               <li class="list-group-item code"><div>
