@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "reflectjs-core": "^0.2.8"
+    "reflectjs-core": "^0.2.9"
   }
 }

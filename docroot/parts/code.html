@@ -1,0 +1,18 @@
+<lib>
+  <style data-name="app-code">
+  </style>
+
+  <:define tag="app-code:code" :class-app-code
+
+    :did-init="[[isServer && doHighlight()]]"
+
+    :doHighlight="[[() => {
+      const buff = [];
+      const src = __dom.innerText.replaceAll('&lt;', '<');
+      console.log(src);
+      buff.push(src);
+      __dom.innerHTML = buff.join('');
+    }]]"
+
+  />
+</lib>
