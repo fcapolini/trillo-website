@@ -1,0 +1,44 @@
+<lib>
+  <style data-name="app-code">
+    .app-code-tag {
+      color: #22863a;
+    }
+    .app-code-attr {
+      color: #005cc5;
+    }
+    .app-code-expr {
+      color: #D76448;
+    }
+  </style>
+
+  <:define tag="app-code:pre" :class-app-code
+
+    :did-init="[[isServer && doHighlight()]]"
+
+    :doHighlight=[[() => {
+      const e = __dom.firstElementChild;
+      let src = e.innerText.replaceAll('<', '&lt;');
+      src = regexMap(/([\w\-\:]+)=/, src, (res) => {
+        return '<span class="app-code-attr">' + res[1] + '</span>=';
+      });
+      src = regexMap(/\[\[([\s\S]*?)\]\]/gm, src, (res) => {
+        return '[[<span class="app-code-expr">' + res[1] + '</span>]' + ']';
+      });
+      src = regexMap(/&lt;(\/)?([\w\-\:]+)/, src, (res) => {
+        return '&lt;' + (res[1] || '') + '<span class="app-code-tag">' + res[2] + '</span>';
+      });
+      e.innerHTML = src;
+    }]]
+
+    :regexMap=[[(re, s, cb) => {
+      const _re = re.flags.indexOf('g') >= 0 ? re : new RegExp(re, 'g' + re.flags);
+      let sb = [], i = 0;
+      for (let match; !!(match = _re.exec(s)); i = match.index + match[0].length) {
+        match.index > i && sb.push(s.substring(i, match.index));
+        sb.push(cb(match));
+      }
+      s.length > i && sb.push(s.substring(i));
+      return sb.join('');
+    }]]
+  />
+</lib>
