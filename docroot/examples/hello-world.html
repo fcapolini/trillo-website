@@ -1,0 +1,10 @@
+<html>
+  <body style="font-family: sans-serif;">
+    <div :count=[[0]]
+         :did-init=[[
+           setInterval(() => count++, 1000);
+         ]]>
+    Seconds: [[count]]
+    </div>
+  </body>
+</html>
