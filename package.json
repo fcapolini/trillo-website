@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "devel": "npx trillo serve docroot",
     "deploy": "caprover deploy --default"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "reflectjs-core": "^0.2.9"
+    "trillo": "^0.6.1"
   }
 }

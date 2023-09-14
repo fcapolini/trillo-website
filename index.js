@@ -1,4 +1,4 @@
-const reflectjs = require('reflectjs-core');
+const trillo = require('trillo');
 const path = require('path');
 
 const CAT_FACTS = [
@@ -57,7 +57,7 @@ const CAT_FACTS = [
   { fact: "Cats lap liquid from the underside of their tongue, not from the top." },
 ];
 
-new reflectjs.Server({
+new trillo.Server({
   port: 3000,
   rootPath: path.join(__dirname, 'docroot'),
   init: (_, app) => {
