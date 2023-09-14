@@ -1,3 +1,3 @@
 # trillo-website
 
-Website for [trillo.org](https://trillo.org/).
+Website for [trillojs.dev](https://trillojs.dev/).
