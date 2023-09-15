@@ -1,0 +1,73 @@
+<lib
+:dark_pageBg="#222"
+:dark_pageFg="#eee"
+:dark_leadBg="#2a2a2a"
+:dark_leadFg="#fff"
+:dark_A="#f89d66"
+:dark_codeBg="#b5614c"
+:dark_cardBg="#2b2e37"
+:dark_cardFg="#eee"
+:dark_cardBd="#3f4f68"
+:dark_cardHeaderBg="#364050"
+:dark_cardCodeBg="#1c1d1f"
+:dark_carouselIconFg="eee"
+>
+<style data-name="dark">
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: [[dark_pageBg]];
+    }
+    a, .app-lead a {
+      color: [[dark_A]];
+    }
+    code {
+      background-color: [[dark_codeBg]];
+      border-color: [[dark_codeBg]];
+    }
+    pre code {
+      color: [[dark_cardFg]];
+    }
+    .app-lead .content {
+      background-color: [[dark_leadBg]];
+      color: [[dark_leadFg]];
+    }
+    .card {
+      background-color: [[dark_cardBg]];
+      /* border-color: [[dark_cardBd]]; */
+      border: 0;
+      box-shadow: none;
+    }
+    .card-header {
+      background-color: [[dark_cardHeaderBg]];
+    }
+    .card-header h1 {
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+    .card .list-group-item {
+      background-color: [[dark_cardBg]];
+      color: [[dark_cardFg]];
+      /* border-bottom-color: [[dark_cardBd]]; */
+      border: 0;
+    }
+    .card .list-group-item.code {
+      background-color: [[dark_cardCodeBg]];
+    }
+    .app-code-attr {
+      color: #3995ff;
+    }
+    .app-code-tag {
+      color: #21c348;
+    }
+    .app-code-expr {
+      color: #f89d66;
+    }
+    .list-group-item.demo > button {
+      background-color: #445167;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      background-color: [[dark_cardBg]];
+    }
+</style>
+</lib>

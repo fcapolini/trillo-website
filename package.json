@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "trillo": "^0.6.2"
+    "trillo": "^0.6.3"
   }
 }
