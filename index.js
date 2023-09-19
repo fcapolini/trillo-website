@@ -1,5 +1,8 @@
 const trillo = require('trillo');
 const path = require('path');
+const fs = require('fs');
+
+const DOCROOT = 'docroot';
 
 const CAT_FACTS = [
   { fact: "The cat who holds the record for the longest non-fatal fall is Andy. He fell from the 16th floor of an apartment building (about 200 ft/.06 km) and survived." },
@@ -57,9 +60,12 @@ const CAT_FACTS = [
   { fact: "Cats lap liquid from the underside of their tongue, not from the top." },
 ];
 
+let docsData;
+
 new trillo.Server({
   port: 3000,
-  rootPath: path.join(__dirname, 'docroot'),
+  rootPath: path.join(__dirname, DOCROOT),
+  liveUpdate: process.argv.includes('--live'),
   init: (_, app) => {
     let i = 0;
 
@@ -89,6 +95,26 @@ new trillo.Server({
       }
 			res.header("Content-Type",'application/json');
       res.send(JSON.stringify(fact));
+    });
+
+    app.get('/docs-data', (req, res, next) => {
+      if (!docsData) {
+        function f(dir, dst) {
+          for (let name of fs.readdirSync(dir)) {
+            const d = { key: name };
+            if (path.extname(name) === '.md') {
+              d.val = fs.readFileSync(path.join(dir, name)).toString();
+            } else {
+              d.children = f(path.join(dir, name), []);
+            }
+            dst.push(d);
+          }
+          return dst;
+        }
+        docsData = JSON.stringify({ docs: f('gitbook', []) });
+      }
+			res.header("Content-Type",'application/json');
+      res.send(docsData);
     });
   }
 });

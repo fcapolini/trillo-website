@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "devel": "npx trillo serve docroot",
+    "devel": "node index.js --live",
     "deploy": "caprover deploy --default"
   },
   "keywords": [],

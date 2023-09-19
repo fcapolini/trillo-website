@@ -37,7 +37,20 @@
     <:import src="parts/dark.htm"/>
   </head>
   <body>
-    <app-navbar/>
+    <app-navbar>
+      <li :slot="left" class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+      </li>
+      <li :slot="left" class="nav-item">
+        <a class="nav-link" target="Trillo Docs" href="https://docs.trillojs.dev/en/quick-start">Quick Start</a>
+      </li>
+      <li :slot="left" class="nav-item">
+        <a class="nav-link" target="Trillo Docs" href="https://docs.trillojs.dev/en/overview">Docs</a>
+      </li>
+      <a :slot="right" href="https://github.com/trillojs/trillo" target="Github" aria-label="Github Repository">
+        <div style="width: 24px; height: 24px; background-image: url(/assets/github-icon.png); background-size: cover;"/>
+      </a>
+    </app-navbar>
 
     <app-hero>
       <h1>Trillo</h1>
@@ -91,9 +104,10 @@
               <li class="list-group-item">
                 <p>
                   You can declare <a target="Trillo Docs" href="https://docs.trillojs.dev/en/topics/reactivity#logic-values">logic values</a> and
-                  <a target="Trillo Docs" href="https://docs.trillojs.dev/en/topics/reactivity#reactive-expressions">reactive expressions</a> using
+                  <a target="Trillo Docs" href="https://docs.trillojs.dev/en/topics/reactivity#reactive-expressions">reactive expressions</a>
+                  directly in HTML, using
                   <span style="text-wrap: nowrap;"><code>:</code>-prefixed</span> attributes and
-                  <code style="text-wrap: nowrap;">[&#8288;[&hellip;]]</code> blocks.
+                  <code style="text-wrap: nowrap;">[&#8288;[...]]</code> blocks.
                 </p>
               </li>
               <li class="list-group-item code"><div>
