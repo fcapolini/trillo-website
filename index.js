@@ -101,6 +101,9 @@ new trillo.Server({
       if (!docsData) {
         function f(dir, dst) {
           for (let name of fs.readdirSync(dir)) {
+            if (name === 'README.md' || name === 'SUMMARY.md') {
+              continue;
+            }
             const d = { key: name };
             if (path.extname(name) === '.md') {
               d.val = fs.readFileSync(path.join(dir, name)).toString();

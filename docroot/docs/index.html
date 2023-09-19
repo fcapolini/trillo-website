@@ -37,7 +37,7 @@
       </form>
     </app-navbar>
 
-    <ul class="menu-list">
+    <!-- <ul class="menu-list">
       <li :data="[[docs.content.docs]]"
           :nestFor="[[data.children]]"
           :nestIn=".menu-list"
@@ -45,6 +45,38 @@
         [[data.key]]
         <ul class="menu-list"/>
       </li>
+    </ul> -->
+
+    <!-- <div class="menu-list">
+      <details :data="[[docs.content.docs]]"
+               :nestFor="[[data.children]]"
+               :class-menu-item="[[true]]"
+               :class-has-children="[[!!data.children]]"
+               open>
+        <summary>[[data.key]]</summary>
+      </details>
+    </div> -->
+
+    <!-- <div class="toc-list">
+      <div class="toc-item"
+           :data="[[docs.content.docs]]"
+           :nestFor="[[data.children]]"
+           :nestIn=".toc-list">
+        <div class="toc-title">[[data.key]]</div>
+        <div class="toc-list"></div>
+      </div>
+    </div> -->
+
+    <ul class="menu-list">
+      <li :class-menu-item="[[true]]"
+          :data="[[docs.content.docs]]"
+          :nestFor="[[data.children]]"
+          :nestIn=".menu-list"
+          :class-has-children="[[!!data.children]]">
+        <a class="menu-link" href="#">[[data.key.replace('-', ' ').replace('.md', '')]]</a>
+        <ul class="menu-list"/>
+      </li>
     </ul>
-</body>
+
+  </body>
 </html>
