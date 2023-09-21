@@ -1,6 +1,10 @@
 <lib>
 <style data-name="docs">
 
+  body {
+    background-color: #fff;
+  }
+
   input[type='search'] {
     font-size: 90%;
   }
@@ -11,7 +15,7 @@
 
   .sidebar {
     font-size: 90%;
-    padding: 1rem 1.25rem 0 0;
+    padding: 2rem 2rem 0 0;
     border-right: 1px solid #ddd;
   }
 
@@ -55,8 +59,43 @@
 
 </style>
 <style data-name="main">
-  .main > .marked-js {
-    padding: 1.5rem;
+  .marked-js {
+    color: rgb(59, 69, 78);
+    padding: 0 2em;
+  }
+
+  .marked-js > * {
+    margin-bottom: 1.5rem;
+  }
+
+  .marked-js h1 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    margin: 1.33em 0;
+  }
+
+  .marked-js h2 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: .025rem;
+    margin: 1.5em 0;
+  }
+
+  .marked-js blockquote {
+    border-left: 4px solid #eee;
+    padding: .25em 1em;
+  }
+  .marked-js blockquote > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .marked-js pre {
+    font-size: 80%;
+    background-color: rgb(245, 247, 249);
+    padding: 10px 1.25rem;
+    border-radius: 4px;
+    /* margin-bottom: 1.5em; */
   }
 </style>
 </lib>
