@@ -2,9 +2,14 @@
 
 Trillo provides a declarative reactive language for implementing the Presenter in a [Model-view-presenter](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) architecture, where the Model is usually provided by RESTful web services and the View is the browser DOM.
 
-It extends HTML with [logic values](https://reflectjs.gitbook.io/docs/reference/language#values), [reactive expressions](https://reflectjs.gitbook.io/docs/reference/language#expressions), [visibility scopes](https://reflectjs.gitbook.io/docs/reference/language#scopes) and [scope methods](https://reflectjs.gitbook.io/docs/reference/language#methods).
+It extends HTML with
 
-## Logic values <a href="#values" id="values"></a>
+1. [logic values](https://reflectjs.gitbook.io/docs/reference/language#values),
+2. [reactive expressions](https://reflectjs.gitbook.io/docs/reference/language#expressions),
+3. [visibility scopes](https://reflectjs.gitbook.io/docs/reference/language#scopes),
+4. [scope methods](https://reflectjs.gitbook.io/docs/reference/language#methods).
+
+## 1. Logic values <a href="#values" id="values"></a>
 
 Logic values can be added to any HTML using `:`-prefixed attributes. These attributes won't appear in output pages and values will be added to page-specific code.
 
@@ -48,7 +53,7 @@ Logic values are JavaScript object properties and, as such, their value can be o
 
 > Trillo's [extended syntax](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/markup/README.md#attribute-values) for attributes makes for a comfortable way of expressing code. You can space things out as you would in a JavaScript source, use unescaped `<` and `>` characters, and use JavaScript comments to document things.
 
-## Reactive expressions <a href="#expressions" id="expressions"></a>
+## 2. Reactive expressions <a href="#expressions" id="expressions"></a>
 
 Reactive JavaScript expressions, marked with `[[` and `]]`, can be used anywhere in page text and attributes.
 
@@ -103,7 +108,7 @@ This re-evaluation chain is started periodically by the timer. This only happens
 
 In actual applications, re-evaluation chains are mostly triggered by user interaction. Similarly, this only happens in the client as user events don't get triggered in the server.
 
-## Visibility scopes <a href="#scopes" id="scopes"></a>
+## 3. Visibility scopes <a href="#scopes" id="scopes"></a>
 
 Tags with at least one logic value have their own scope, meaning they have their own JavaScript object behind the scenes. In addition, the standard tags `<html>`, `<head>` and `<body>` always have a scope regardless.
 
@@ -168,7 +173,7 @@ When a value seems to reference itself in its initialization expression, it's ac
 
 This isn't true for functions: a function can call itself in order to implement recursive algorithms.
 
-## Scope methods <a href="#methods" id="methods"></a>
+## 4. Scope methods <a href="#methods" id="methods"></a>
 
 Expressions can be used to declare function values, either with the arrow or the classic syntax:
 
