@@ -23,6 +23,11 @@
     padding: 2rem 1rem 0 .5rem;
     border-right: 1px solid #e6e6e6;
   }
+  @media (min-width: 1200px) {
+    .sidebar {
+      padding-right: 3rem;
+    }
+  }
 
   .sidebar > div {
     position: -webkit-sticky;
@@ -84,9 +89,27 @@
   }
 </style>
 <style data-name="main">
+  .col.main {
+    padding: 0 2rem;
+  }
+  @media (min-width: 768px) {
+    .col.main {
+      padding: 0 1.25rem;
+    }
+  }
+  @media (min-width: 992px) {
+    .col.main {
+      padding: 0 2rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .col.main {
+      padding: 0 4rem;
+    }
+  }
+
   .marked-js {
     color: rgb(59, 69, 78);
-    padding: 0 2em;
     margin-bottom: 4em;
   }
 
