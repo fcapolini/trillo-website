@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" :URLPATH="/">
+<html lang="en" :URLPATH="/docs">
   <head :title="Trillo Docs">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,13 +20,15 @@
     <:import src="../parts/navbar.htm"/>
     <:import src="../parts/footer.htm"/>
     <:import src="../parts/dark.htm"/>
+    <:import src="parts/highlight-js.htm"/>
+    <:import src="parts/marked-js.htm"/>
     <:import src="parts/docs.htm"/>
   </head>
   <body :pathname="[[head.router.pathname.substring(PAGEPATH.length)]]"
         :docurl="[[pathname !== 'index' ? pathname : 'quick-start']]">
     <:data-source :aka="docsData"
                   :url="/docs-data"
-                  :getUrlTitle="[[(url) => {
+                  :getTitle="[[(url) => {
                     let ret = '';
                     const f = (dd) => {
                       for (let d of dd) {
@@ -39,12 +41,26 @@
                     }
                     f(content.docs);
                     return ret;
-                  }]]" />
+                  }]]"
+                  :getValue="[[(url) => {
+                    let ret = '';
+                    const f = (dd) => {
+                      for (let d of dd) {
+                        if (d.children) {
+                          f(d.children);
+                        } else if (d.url === url) {
+                          ret = d.val;
+                        }
+                      }
+                    }
+                    f(content.docs);
+                    return ret;
+                  }]]"/>
 
     <app-navbar>
       <li :slot="left" class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/docs">
-          [[head.title + (doc.title ? ' - ' + doc.title : '')]]
+        <a class="nav-link active" aria-current="page" href="/">
+          [[head.title + (main.title ? ' - ' + main.title : '')]]
         </a>
       </li>
       <form :slot="right" class="d-flex" role="search">
@@ -55,13 +71,12 @@
       </form>
     </app-navbar>
 
-    <div :aka="doc"
+    <div :aka="main"
          class="container docs"
          :data="[[docsData.content]]"
-         :title="[[docsData.getUrlTitle(docurl)]]">
+         :title="[[docsData.getTitle(docurl)]]">
       <div class="row">
 
-        <!--- sidebar -->
         <div class="col-3 sidebar">
           <div>
             <ul class="menu-list">
@@ -78,8 +93,8 @@
           </div>
         </div>
 
-        <!--- main -->
-        <div class="col">
+        <div class="col-9 main">
+          <marked-js :source="[[docsData.getValue(docurl)]]"/>
         </div>
 
       </div>
