@@ -2,7 +2,7 @@
 
 Trillo provides a declarative reactive language for implementing the Presenter in a [Model-view-presenter](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) architecture, where the Model is usually provided by RESTful web services and the View is the browser DOM.
 
-It extends HTML with
+It extends HTML with:
 
 1. [logic values](https://reflectjs.gitbook.io/docs/reference/language#values),
 2. [reactive expressions](https://reflectjs.gitbook.io/docs/reference/language#expressions),
