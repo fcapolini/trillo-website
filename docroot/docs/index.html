@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" :URLPATH="/docs">
+<html lang="en" :URLPATH="/">
   <head :title="Trillo Docs">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -100,6 +100,10 @@
       </div>
     </div>
 
+    <app-footer>
+      &copy; [[new Date().getYear() + 1900]] trillojs.dev
+      <a href="https://github.com/trillojs/trillo/blob/main/LICENSE" target="Github" style="float: right">MIT Licence</a>
+    </app-footer>
     <script src="/res/bootstrap-5.3.1/bootstrap.bundle.min.js"></script>
   </body>
 </html>
