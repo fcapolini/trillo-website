@@ -3,18 +3,30 @@
     .navbar {
       background-color: [[page_headerBg]] !important;
       min-height: 56px;
+      padding-top: .75rem;
+      padding-bottom: .75rem;
     }
     .navbar a {
-      color: white;
+      /* color: white; */
+    }
+    @media (min-width: 576px) {
+      .navbar-brand {
+        margin-left: .75rem;
+        margin-right: .66rem;
+      }
     }
   </style>
 
   <:define tag="app-navbar:nav"
            class="navbar navbar-expand-sm bg-body-tertiary"
-           data-bs-theme="dark">
-    <div class="container">
+           data-bs-theme="dark"
+           :container="container">
+    <div class="[[container]]">
       <a class="navbar-brand" href="/index" aria-label="Trillo Homepage">
-        <img alt="Trillo Logo" src="data:image/svg+xml,%3Csvg%20width%3D%22230%22%20height%3D%22230%22%20viewBox%3D%220%200%20230%20230%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cg%20clip-path%3D%22url%28%23clip0_302_18%29%22%3E%0A%3Crect%20width%3D%22230%22%20height%3D%22230%22%20rx%3D%2250%22%20fill%3D%22%23EF6F4C%22%2F%3E%0A%3Cpath%20d%3D%22M38.1689%20112.919L81.1118%2076.0137%22%20stroke%3D%22white%22%20stroke-width%3D%2217%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M112.231%2050L57.5951%2059.054L91.0273%20106.124L112.231%2050ZM41.3894%20117.447L80.9985%2083.4067L75.2079%2075.2539L35.5988%20109.295L41.3894%20117.447Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M37%20113.995L89.8696%20168.227%22%20stroke%3D%22white%22%20stroke-width%3D%2217%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M192.521%20116.731L145.785%20155.863%22%20stroke%3D%22white%22%20stroke-width%3D%2217%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M118.785%20180.101L173.422%20171.047L139.989%20123.977L118.785%20180.101ZM189.627%20112.654L150.018%20146.695L155.809%20154.847L195.418%20120.807L189.627%20112.654Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M192.207%20116.021L138.483%2062.8106%22%20stroke%3D%22white%22%20stroke-width%3D%2217%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3C%2Fg%3E%0A%3Cdefs%3E%0A%3CclipPath%20id%3D%22clip0_302_18%22%3E%0A%3Crect%20width%3D%22230%22%20height%3D%22230%22%20fill%3D%22white%22%2F%3E%0A%3C%2FclipPath%3E%0A%3C%2Fdefs%3E%0A%3C%2Fsvg%3E" width="32" height="32">
+        <img alt="Trillo Logo"
+             src="data:image/svg+xml,%3Csvg%20width%3D%22230%22%20height%3D%22230%22%20viewBox%3D%220%200%20230%20230%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cg%20clip-path%3D%22url%28%23clip0_302_18%29%22%3E%0A%3Crect%20width%3D%22230%22%20height%3D%22230%22%20rx%3D%2250%22%20fill%3D%22%23FB5312%22%2F%3E%0A%3Cpath%20d%3D%22M38.1689%20112.919L81.1118%2076.0137%22%20stroke%3D%22white%22%20stroke-width%3D%2217%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M112.231%2050L57.5951%2059.054L91.0273%20106.124L112.231%2050ZM41.3894%20117.447L80.9985%2083.4067L75.2079%2075.2539L35.5988%20109.295L41.3894%20117.447Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M37%20113.995L89.8696%20168.227%22%20stroke%3D%22white%22%20stroke-width%3D%2217%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M192.521%20116.731L145.785%20155.863%22%20stroke%3D%22white%22%20stroke-width%3D%2217%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M118.785%20180.101L173.422%20171.047L139.989%20123.977L118.785%20180.101ZM189.627%20112.654L150.018%20146.695L155.809%20154.847L195.418%20120.807L189.627%20112.654Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M192.207%20116.021L138.483%2062.8106%22%20stroke%3D%22white%22%20stroke-width%3D%2217%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3C%2Fg%3E%0A%3Cdefs%3E%0A%3CclipPath%20id%3D%22clip0_302_18%22%3E%0A%3Crect%20width%3D%22230%22%20height%3D%22230%22%20fill%3D%22white%22%2F%3E%0A%3C%2FclipPath%3E%0A%3C%2Fdefs%3E%0A%3C%2Fsvg%3E"
+             width="40"
+             height="40">
       </a>
       <button class="navbar-toggler"
               type="button"

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" :URLPATH="/">
-  <head :title="Trillo Docs">
+  <head :title="Trillo Docs" :page_headerBg="#fff">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Isomorphic reactive web framework and server for Node.js and the browser">
@@ -57,7 +57,7 @@
                     return ret;
                   }]]"/>
 
-    <app-navbar>
+    <app-navbar :container="container-lg" data-bs-theme="light">
       <li :slot="left" class="nav-item">
         <a class="nav-link active" aria-current="page" href="/">
           [[head.title + (main.title ? ' - ' + main.title : '')]]
@@ -72,7 +72,7 @@
     </app-navbar>
 
     <div :aka="main"
-         class="container docs"
+         class="container-lg docs"
          :data="[[docsData.content]]"
          :title="[[docsData.getTitle(docurl)]]">
       <div class="row">
@@ -93,7 +93,7 @@
           </div>
         </div>
 
-        <div class="col-9 main">
+        <div class="col main">
           <marked-js :source="[[docsData.getValue(docurl)]]"/>
         </div>
 

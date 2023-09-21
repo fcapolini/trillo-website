@@ -9,14 +9,26 @@
     font-size: 90%;
   }
 
+  .navbar {
+    border-bottom: 1px solid #e6e6e6;
+  }
+
   .docs {
     min-height: 100%;
   }
 
   .sidebar {
+    display: none;
     font-size: 90%;
-    padding: 2rem 2rem 0 0;
+    padding: 2rem 1rem 0 .5rem;
     border-right: 1px solid #e6e6e6;
+  }
+
+  .sidebar > div {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .sidebar > ul.menu-list {
@@ -24,11 +36,11 @@
   }
 
   ul.menu-list {
-    /* width: fit-content; */
     list-style: none;
     padding: 0;
     margin-top: .5rem;
     margin-left: .25rem;
+    margin-bottom: .5rem;
     text-align: left;
   }
 
@@ -38,8 +50,12 @@
   }
 
   .menu-item {
-    padding: .33rem .75rem;
     border-radius: 5px;
+  }
+
+  .menu-item > a {
+    display: block;
+    padding: .33rem 0 .33rem .75rem;
   }
 
   .menu-item.has-children > a {
@@ -53,12 +69,18 @@
   }
 
   .menu-item.selected {
-    background-color: #eee;
+    background-color: rgb(245, 247, 249);
     font-weight: bold;
   }
 
   .app-footer {
     margin-top: 0;
+  }
+
+  @media (min-width: 768px) {
+    .sidebar {
+      display: initial;
+    }
   }
 </style>
 <style data-name="main">
@@ -76,7 +98,6 @@
     font-size: 40px;
     font-weight: 600;
     letter-spacing: .05rem;
-    /* margin: 1.33em 0; */
     padding: 1.33em 0;
     margin: 0;
   }
@@ -85,7 +106,14 @@
     font-size: 24px;
     font-weight: 600;
     letter-spacing: .025rem;
-    /* margin: 1.5em 0; */
+    padding: 1.25em 0;
+    margin: -.75em 0 0 0;
+  }
+
+  .marked-js h3 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .025rem;
     padding: 1.25em 0;
     margin: -.75em 0 0 0;
   }
