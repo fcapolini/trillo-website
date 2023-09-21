@@ -2,8 +2,6 @@ const trillo = require('trillo');
 const path = require('path');
 const fs = require('fs');
 
-const DOCROOT = 'docroot';
-
 const CAT_FACTS = [
   { fact: "The cat who holds the record for the longest non-fatal fall is Andy. He fell from the 16th floor of an apartment building (about 200 ft/.06 km) and survived." },
   { fact: "Kittens remain with their mother till the age of 9 weeks." },
@@ -64,7 +62,7 @@ let docsData;
 
 new trillo.Server({
   port: 3000,
-  rootPath: path.join(__dirname, DOCROOT),
+  rootPath: path.join(__dirname, 'docroot'),
   liveUpdate: process.argv.includes('--live'),
   init: (_, app) => {
     let i = 0;
@@ -99,22 +97,31 @@ new trillo.Server({
 
     app.get('/docs-data', (req, res, next) => {
       if (!docsData) {
-        function f(dir, dst) {
-          for (let name of fs.readdirSync(dir)) {
-            if (name === 'README.md' || name === 'SUMMARY.md') {
-              continue;
+        const rootpath = path.join(__dirname, 'gitbook');
+        const summary = fs.readFileSync(path.join(rootpath, 'SUMMARY.md')).toString();
+        const lines = summary.split('\n').filter(s => s.indexOf('*') >= 0);
+
+        function list(dir, dst) {
+          for (const line of lines) {
+            const [_, name, file] = /\[(.+?)\]\((.+?)\)/.exec(line);
+            const dname = path.dirname('./' + file);
+            const fname = path.basename(file);
+            if (dname === dir) {
+              fname !== 'README.md' && dst.push({
+                key: name,
+                val: fs.readFileSync(path.join(rootpath, file)).toString()
+              })
+            } else if (dname.startsWith(dir) && fname === 'README.md') {
+              dst.push({
+                key: name,
+                children: list(dname, [])
+              })
             }
-            const d = { key: name };
-            if (path.extname(name) === '.md') {
-              d.val = fs.readFileSync(path.join(dir, name)).toString();
-            } else {
-              d.children = f(path.join(dir, name), []);
-            }
-            dst.push(d);
           }
           return dst;
         }
-        docsData = JSON.stringify({ docs: f('gitbook', []) });
+
+        docsData = { docs: list('.', []) };
       }
 			res.header("Content-Type",'application/json');
       res.send(docsData);
