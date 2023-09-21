@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" :URLPATH="/">
   <head :title="Trillo Docs">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,7 @@
     <link rel="icon" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/assets/trillo-semi.png"/>
     <!--- https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
-    <link href="/res/bootstrap.min.css" rel="stylesheet">
+    <link href="/res/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
     <!--- https://icons.getbootstrap.com -->
     <!--- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
     <!--- https://icons8.com/line-awesome -->
@@ -22,7 +22,8 @@
     <:import src="../parts/dark.htm"/>
     <:import src="parts/docs.htm"/>
   </head>
-  <body>
+  <body :pathname="[[head.router.pathname.substring(PAGEPATH.length)]]"
+        :docurl="[[pathname !== 'index' ? pathname : 'quick-start']]">
     <:data-source :aka="docsData"
                   :url="/docs-data"
                   :getUrlTitle="[[(url) => {
@@ -42,7 +43,9 @@
 
     <app-navbar>
       <li :slot="left" class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/docs">[[head.title]] - [[doc.title]]</a>
+        <a class="nav-link active" aria-current="page" href="/docs">
+          [[head.title + (doc.title ? ' - ' + doc.title : '')]]
+        </a>
       </li>
       <form :slot="right" class="d-flex" role="search">
         <input class="form-control me-2"
@@ -54,9 +57,8 @@
 
     <div :aka="doc"
          class="container docs"
-         :selection="quick-start"
          :data="[[docsData.content]]"
-         :title="[[docsData.getUrlTitle(selection)]]">
+         :title="[[docsData.getUrlTitle(docurl)]]">
       <div class="row">
 
         <!--- sidebar -->
@@ -64,12 +66,12 @@
           <div>
             <ul class="menu-list">
               <li :class-menu-item="[[true]]"
-                  :class-selected="[[data.url === selection]]"
+                  :class-selected="[[data.url === docurl]]"
                   :data="[[data.docs]]"
                   :nestFor="[[data.children]]"
                   :nestIn=".menu-list"
                   :class-has-children="[[!!data.children]]">
-                <a class="menu-link" href="[[data.url]]">[[data.key]]</a>
+                <a class="menu-link" href="[[PAGEPATH + data.url]]">[[data.key]]</a>
                 <ul class="menu-list"/>
               </li>
             </ul>
@@ -83,6 +85,6 @@
       </div>
     </div>
 
-    <script src="/res/bootstrap.bundle.min.js"></script>
+    <script src="/res/bootstrap-5.3.1/bootstrap.bundle.min.js"></script>
   </body>
 </html>
