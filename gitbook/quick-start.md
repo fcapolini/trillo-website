@@ -93,9 +93,7 @@ And we can run the project:
 
 ```sh
 node index.js
-# ... START http://localhost:3001
+# ... START http://localhost:3001When using Trillo in a project we can customize it and add our own services and middleware to the server. All options are documented in the .
 ```
 
-{% hint style="success" %}
-When using Trillo in a project we can customize it and add our own services and middleware to the server. All options are documented in the [Server Reference](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/server/README.md).
-{% endhint %}
+> When using Trillo in a project we can customize it and add our own services and middleware to the server. All options are documented in the [Server Reference](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/server/README.md).
