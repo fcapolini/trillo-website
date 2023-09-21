@@ -23,60 +23,66 @@
     <:import src="parts/docs.htm"/>
   </head>
   <body>
-    <:data-source :aka="docs" :url="/docs-data"/>
+    <:data-source :aka="docsData"
+                  :url="/docs-data"
+                  :getUrlTitle="[[(url) => {
+                    let ret = '';
+                    const f = (dd) => {
+                      for (let d of dd) {
+                        if (d.children) {
+                          f(d.children);
+                        } else if (d.url === url) {
+                          ret = d.key;
+                        }
+                      }
+                    }
+                    f(content.docs);
+                    return ret;
+                  }]]" />
+
     <app-navbar>
       <li :slot="left" class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/docs">Trillo Docs</a>
+        <a class="nav-link active" aria-current="page" href="/docs">[[head.title]] - [[doc.title]]</a>
       </li>
       <form :slot="right" class="d-flex" role="search">
         <input class="form-control me-2"
                type="search"
                placeholder="Search"
                aria-label="Search">
-        <button class="btn btn-primary" type="submit">Search</button>
       </form>
     </app-navbar>
 
-    <!-- <ul class="menu-list">
-      <li :data="[[docs.content.docs]]"
-          :nestFor="[[data.children]]"
-          :nestIn=".menu-list"
-          class="menu-item">
-        [[data.key]]
-        <ul class="menu-list"/>
-      </li>
-    </ul> -->
+    <div :aka="doc"
+         class="container docs"
+         :selection="quick-start"
+         :data="[[docsData.content]]"
+         :title="[[docsData.getUrlTitle(selection)]]">
+      <div class="row">
 
-    <!-- <div class="menu-list">
-      <details :data="[[docs.content.docs]]"
-               :nestFor="[[data.children]]"
-               :class-menu-item="[[true]]"
-               :class-has-children="[[!!data.children]]"
-               open>
-        <summary>[[data.key]]</summary>
-      </details>
-    </div> -->
+        <!--- sidebar -->
+        <div class="col-3 sidebar">
+          <div>
+            <ul class="menu-list">
+              <li :class-menu-item="[[true]]"
+                  :class-selected="[[data.url === selection]]"
+                  :data="[[data.docs]]"
+                  :nestFor="[[data.children]]"
+                  :nestIn=".menu-list"
+                  :class-has-children="[[!!data.children]]">
+                <a class="menu-link" href="[[data.url]]">[[data.key]]</a>
+                <ul class="menu-list"/>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- <div class="toc-list">
-      <div class="toc-item"
-           :data="[[docs.content.docs]]"
-           :nestFor="[[data.children]]"
-           :nestIn=".toc-list">
-        <div class="toc-title">[[data.key]]</div>
-        <div class="toc-list"></div>
+        <!--- main -->
+        <div class="col">
+        </div>
+
       </div>
-    </div> -->
+    </div>
 
-    <ul class="menu-list">
-      <li :class-menu-item="[[true]]"
-          :data="[[docs.content.docs]]"
-          :nestFor="[[data.children]]"
-          :nestIn=".menu-list"
-          :class-has-children="[[!!data.children]]">
-        <a class="menu-link" href="#">[[data.key.replace('-', ' ').replace('.md', '')]]</a>
-        <ul class="menu-list"/>
-      </li>
-    </ul>
-
+    <script src="/res/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -109,6 +109,7 @@ new trillo.Server({
             if (dname === dir) {
               fname !== 'README.md' && dst.push({
                 key: name,
+                url: file.replace(/\.md$/, ''),
                 val: fs.readFileSync(path.join(rootpath, file)).toString()
               })
             } else if (dname.startsWith(dir) && fname === 'README.md') {

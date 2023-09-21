@@ -1,91 +1,57 @@
 <lib>
-
 <style data-name="docs">
 
-  input[type='search'],
-  button[type='submit'] {
+  input[type='search'] {
     font-size: 90%;
   }
 
-  /* .menu-list {
-    padding-left: 1em;
+  .docs {
+    min-height: 100%;
   }
 
-  summary {
-    cursor: pointer;
+  .sidebar {
+    font-size: 90%;
+    padding: 1rem 1.25rem 0 0;
+    border-right: 1px solid #ddd;
   }
 
-  details > details {
-    padding-left: 1em;
+  .sidebar > ul.menu-list {
+    margin-left: -.5rem;
   }
 
-  details:not(.has-children) > summary {
-    list-style-type: none;
-  } */
-
-  /* .toc-list {
-    padding-left: 1em;
-  } */
-
-  .menu-list {
+  ul.menu-list {
+    /* width: fit-content; */
     list-style: none;
+    padding: 0;
+    margin-top: .5rem;
+    margin-left: .25rem;
+    text-align: left;
   }
 
-  .menu-item > a {
-    text-transform: capitalize;
+  li.menu-item.has-children > ul.menu-list {
+    padding: .25rem 0 0 .75rem;
+    border-left: 1px solid #eee;
+  }
+
+  .menu-item {
+    padding: .33rem .75rem;
+    border-radius: 5px;
   }
 
   .menu-item.has-children > a {
+    color: #555;
     cursor: default;
     pointer-events: none;
   }
+
+  .menu-item:not(.has-children) > ul {
+    display: none;
+  }
+
+  .menu-item.selected {
+    background-color: #eee;
+    font-weight: bold;
+  }
+
 </style>
-
-<:define tag="bs-accordion"
-         class="accordion"
-         :flush=[[false]]
-         :mutex=[[true]]
-         :selection=[[0]]
-         :accordionId="[[__id]]"
-         id="accordion-[[accordionId]]"
-         :class-accordionFlush=[[flush]] />
-
-<:define tag="bs-accordion-item"
-         class="accordion-item"
-         :header=""
-         :itemId="[[__id]]"
-         :itemIndex="[[__elementIndex()]]"
-         :handle-data="[[itemIndex = __elementIndex()]]"
-         :selected="[[false]]"
-         :on-selection="[[mutex ? selected = (selection === itemIndex) : null]]"
-         :on-hidden.bs.collapse="[[() => {
-            return mutex && selection === itemIndex
-                ? selection = -1
-                : null;
-          }]]"
-         :on-shown.bs.collapse="[[() => mutex ? selection = itemIndex : null]]">
-  <h2 class="accordion-header"
-      id="heading-[[itemId]]">
-    <button type="button"
-            class="accordion-button"
-            :class-collapsed=[[!selected]]
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-[[itemId]]"
-            aria-expanded=[[selected]]
-            aria-controls="collapse-[[itemId]]">
-      [[header]]
-      <:slot name="header" />
-    </button>
-  </h2>
-  <div id="collapse-[[itemId]]"
-       class="accordion-collapse collapse"
-       :class-show="[[selected]]"
-       data-bs-parent="[[mutex ? '#accordion-' + accordionId : null]]"
-       aria-labelledby="heading-[[itemId]]">
-    <div class="accordion-body">
-      <:slot name="default" />
-    </div>
-  </div>
-</:define>
-
 </lib>
