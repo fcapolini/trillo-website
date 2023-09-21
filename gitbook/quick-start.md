@@ -2,9 +2,7 @@
 
 ## Installation
 
-{% hint style="warning" %}
-Trillo requires Node.js >= v.16. If you don't have it on you machine, download it from the [Node.js site](https://nodejs.org/en) and install it before proceeding.
-{% endhint %}
+> Trillo requires Node.js >= v.16. If you don't have it on you machine, download it from the [Node.js site](https://nodejs.org/en) and install it before proceeding.
 
 ```sh
 npm install -g trillo
@@ -36,9 +34,7 @@ We can add a simple page...
 
 ...and open [http://localhost:3000](http://localhost:3000/) to see the seconds counter live.
 
-{% hint style="success" %}
-If you look at the page source received by the browser you'll notice it contains the text "Seconds: 0". This shows that page logic is executed once in the server in order to deliver content-ready pages, and then transferred to the client to support local updates and user interaction: Trillo supports [isomorphism](https://en.wikipedia.org/wiki/Isomorphic\_JavaScript) out of the box.
-{% endhint %}
+> If you look at the page source received by the browser you'll notice it contains the text "Seconds: 0". This shows that page logic is executed once in the server in order to deliver content-ready pages, and then transferred to the client to support local updates and user interaction: Trillo supports [isomorphism](https://en.wikipedia.org/wiki/Isomorphic\_JavaScript) out of the box.
 
 ## Use in a project
 
