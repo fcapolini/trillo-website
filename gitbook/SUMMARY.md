@@ -10,6 +10,7 @@
   * [Reusability](topics/reusability.md)
   * [Kits](topics/kits.md)
 * [How-to](how-to/README.md)
+  * [Data Binding](how-to/data-binding.md)
   * [Routing](how-to/routing.md)
 * [Reference](reference/README.md)
   * [CLI](reference/cli.md)
