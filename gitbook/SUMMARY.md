@@ -9,6 +9,8 @@
   * [Indexability](topics/indexability.md)
   * [Reusability](topics/reusability.md)
   * [Kits](topics/kits.md)
+* [How-to](how-to/README.md)
+  * [Routing](how-to/routing.md)
 * [Reference](reference/README.md)
   * [CLI](reference/cli.md)
   * [Language](reference/language.md)
