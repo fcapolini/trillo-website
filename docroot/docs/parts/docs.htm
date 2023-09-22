@@ -55,16 +55,22 @@
   }
 
   .menu-item {
+    padding: .15rem 0;
     border-radius: 5px;
   }
 
   .menu-item > a {
     display: block;
-    padding: .33rem 0 .33rem .75rem;
+    color: rgb(59, 69, 78);
+    padding: .25rem 0 .25rem .75rem;
+    border-radius: 5px;
+  }
+  .menu-item:not(.selected) > a:hover {
+    background-color: rgba(236,239,241,1.00);
   }
 
   .menu-item.has-children > a {
-    color: #555;
+    color: #aaa;
     cursor: default;
     pointer-events: none;
   }
@@ -76,6 +82,9 @@
   .menu-item.selected {
     background-color: rgb(245, 247, 249);
     font-weight: bold;
+  }
+  .menu-item.selected > a {
+    color: #005cc5;
   }
 
   .app-footer {
@@ -105,6 +114,11 @@
   @media (min-width: 1200px) {
     .col.main {
       padding: 0 4rem;
+    }
+  }
+  @media (min-width: 1400px) {
+    .col.main {
+      padding: 0 8rem;
     }
   }
 
@@ -154,10 +168,20 @@
   }
 
   .marked-js pre {
-    font-size: 80%;
+    font-size: 100%;
+    line-height: 125%;
     background-color: rgb(245, 247, 249);
     padding: 10px 1.25rem;
     border-radius: 4px;
+  }
+
+  .marked-js code {
+    font-size: 80%;
+  }
+
+  .marked-js ol > li {
+    margin-block-start: 0.6rem;
+    padding-inline-start: 0.3rem;
   }
 </style>
 </lib>
