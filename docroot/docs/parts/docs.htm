@@ -239,14 +239,17 @@
     .menu-item.selected {
       background-color: rgba(245, 247, 249, .75);
     }
+    li.menu-item.has-children > ul.menu-list {
+      border-left: 1px solid rgba(255,255,255,.2);
+    }
+    .menu-item.selected > a {
+      color: #b34428;
+    }
     .marked-js {
       color: #e0e0e0;
     }
-    .menu-item.selected > a {
-      color: #bb4b2f;
-    }
     .marked-js h1, .marked-js h2, .marked-js h3 {
-      /* color: #f8f8f8; */
+      font-weight: 500;
       color: #f89d66;
     }
     .marked-js blockquote {
