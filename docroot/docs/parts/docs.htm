@@ -33,7 +33,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   .sidebar > ul.menu-list {
@@ -99,11 +99,35 @@
 </style>
 <style data-name="main">
   .col.main {
-    padding: 0 2rem;
+    padding: 0 1rem;
+  }
+  .marked-js h1 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    padding: .75em 0;
+    margin: 0;
+  }
+  .marked-js {
+    color: rgb(59, 69, 78);
+    margin-bottom: 3em;
+  }
+
+  @media (min-width: 400px) {
+    .col.main {
+      padding: 0 2rem;
+    }
   }
   @media (min-width: 768px) {
     .col.main {
       padding: 0 1.25rem;
+    }
+    .marked-js {
+      margin-bottom: 4em;
+    }
+    .marked-js h1 {
+      font-size: 40px;
+      padding: 1.33em 0;
     }
   }
   @media (min-width: 992px) {
@@ -122,21 +146,8 @@
     }
   }
 
-  .marked-js {
-    color: rgb(59, 69, 78);
-    margin-bottom: 4em;
-  }
-
   .marked-js > * {
     margin-bottom: 1.5rem;
-  }
-
-  .marked-js h1 {
-    font-size: 40px;
-    font-weight: 600;
-    letter-spacing: .05rem;
-    padding: 1.33em 0;
-    margin: 0;
   }
 
   .marked-js h2 {
@@ -173,6 +184,7 @@
     background-color: rgb(245, 247, 249);
     padding: 10px 1.25rem;
     border-radius: 4px;
+    overflow-x: auto;
   }
 
   .marked-js code {
