@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" :URLPATH="/">
+<html lang="en" :URLPATH="/docs/">
   <head :title="Trillo Docs" :page_headerBg="#fff">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,15 +16,15 @@
     <!--- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
     <!--- https://icons8.com/line-awesome -->
     <!--- <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" rel="stylesheet"> -->
-    <:import src="../parts/page.htm"/>
-    <:import src="../parts/navbar.htm"/>
-    <:import src="../parts/footer.htm"/>
-    <:import src="../parts/dark.htm"/>
-    <:import src="parts/highlight-js.htm"/>
-    <:import src="parts/marked-js.htm"/>
-    <:import src="parts/docs.htm"/>
+    <:import src="parts/page.htm"/>
+    <:import src="parts/navbar.htm"/>
+    <:import src="parts/footer.htm"/>
+    <:import src="parts/dark.htm"/>
+    <:import src="docs-parts/highlight-js.htm"/>
+    <:import src="docs-parts/marked-js.htm"/>
+    <:import src="docs-parts/docs.htm"/>
   </head>
-  <body :pathname="[[head.router.pathname.substring(PAGEPATH.length)]]"
+  <body :pathname="[[head.router.pathname.substring(URLPATH.length)]]"
         :docurl="[[pathname !== 'index' ? pathname : 'quick-start']]">
     <:data-source :aka="docsData"
                   :url="/docs-data"
@@ -87,7 +87,7 @@
                     :nestFor="[[data.children]]"
                     :nestIn=".menu-list"
                     :class-has-children="[[!!data.children]]">
-                  <a class="menu-link" href="[[PAGEPATH + data.url]]">[[data.key]]</a>
+                  <a class="menu-link" href="[[PAGEPATH + 'docs/' + data.url]]">[[data.key]]</a>
                   <ul class="menu-list"/>
                 </li>
               </ul>

@@ -38,7 +38,7 @@
         sb.push(cb(match));
       }
       s.length > i && sb.push(s.substring(i));
-      return sb.join('');
+      return sb.join('').replace(/(\s)$/, '');
     }]]
   />
 </lib>
