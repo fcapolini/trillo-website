@@ -37,7 +37,7 @@
     <:import src="parts/dark.htm"/>
   </head>
   <body>
-    <app-navbar data-bs-theme="light">
+    <app-navbar :container="container-lg" data-bs-theme="light">
       <li :slot="left" class="nav-item">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
       </li>
