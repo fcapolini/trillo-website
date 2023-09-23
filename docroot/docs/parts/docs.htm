@@ -3,6 +3,7 @@
 
   body {
     background-color: #fff;
+    color: rgb(59, 69, 78);
   }
 
   input[type='search'] {
@@ -11,6 +12,11 @@
 
   .navbar {
     border-bottom: 1px solid #e6e6e6;
+  }
+  @media (prefers-color-scheme: light) {
+    .nav-link.active {
+      color: black !important;
+    }
   }
 
   .docs {
@@ -91,9 +97,16 @@
     margin-top: 0;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     .sidebar {
       display: initial;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #2b2e37;
+      color: #eee;
     }
   }
 </style>
@@ -109,7 +122,7 @@
     margin: 0;
   }
   .marked-js {
-    color: rgb(59, 69, 78);
+    /* color: rgb(59, 69, 78); */
     margin-bottom: 3em;
   }
 
@@ -119,9 +132,6 @@
     }
   }
   @media (min-width: 768px) {
-    .col.main {
-      padding: 0 1.25rem;
-    }
     .marked-js {
       margin-bottom: 4em;
     }
@@ -130,9 +140,9 @@
       padding: 1.33em 0;
     }
   }
-  @media (min-width: 992px) {
-    .col.main {
-      padding: 0 2rem;
+  @media (min-width: 900px) {
+    .sidebar {
+      display: initial;
     }
   }
   @media (min-width: 1200px) {
@@ -194,6 +204,93 @@
   .marked-js ol > li {
     margin-block-start: 0.6rem;
     padding-inline-start: 0.3rem;
+  }
+
+  .marked-js a > code {
+    background-color: #464c5d;
+    border: 1px solid #4a5164;
+  }
+</style>
+<style>
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #000;
+      font-weight: 300;
+      letter-spacing: .04rem;
+    }
+    .docs {
+      background-color: #222;
+    }
+    .navbar {
+      border-bottom: 1px solid transparent;
+    }
+    .nav-link.active {
+      color: #fff !important;
+    }
+    .sidebar {
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
+    .menu-item a {
+      color: #f0f0f0;
+    }
+    .menu-item:not(.selected) > a:hover {
+      background-color: rgba(236,239,241,.2);
+    }
+    .menu-item.selected {
+      background-color: rgba(245, 247, 249, .75);
+    }
+    .marked-js {
+      color: #e0e0e0;
+    }
+    .menu-item.selected > a {
+      color: #bb4b2f;
+    }
+    .marked-js h1, .marked-js h2, .marked-js h3 {
+      /* color: #f8f8f8; */
+      color: #f89d66;
+    }
+    .marked-js blockquote {
+      border-left: 4px solid #888;
+    }
+    .marked-js pre {
+      background-color: #2c2f38;
+      border: 1px solid #31343e;
+    }
+    .navbar {
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .app-footer {
+      border-top: 1px solid rgba(255,255,255,.15);
+    }
+    p > code {
+      background-color: #464c5d;
+      border: 1px solid #4a5164;
+    }
+  }
+</style>
+<style>
+  @media (prefers-color-scheme: dark) {
+    .hljs-comment {
+      color: #888;
+    }
+    .hljs-keyword {
+      color: #ff6070;
+    }
+    .hljs-built_in, .hljs-symbol {
+      color: #f87118;
+    }
+    .hljs-string {
+      color: #a3ceff;
+    }
+    .hljs-title, .hljs-title.class_, .hljs-title.class_.inherited__, .hljs-title.function_ {
+      color: #b187ff;
+    }
+    .hljs-attr, .hljs-attribute, .hljs-literal, .hljs-meta, .hljs-number, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id, .hljs-variable {
+      color: #54a4ff;
+    }
+    .hljs-name, .hljs-quote, .hljs-selector-pseudo, .hljs-selector-tag {
+      color: #4ee270;
+    }
   }
 </style>
 </lib>

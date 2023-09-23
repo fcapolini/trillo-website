@@ -71,32 +71,34 @@
       </form> -->
     </app-navbar>
 
-    <div :aka="main"
-         class="container-lg docs"
-         :data="[[docsData.content]]"
-         :title="[[docsData.getTitle(docurl)]]">
-      <div class="row">
+    <div class="docs">
+      <div :aka="main"
+          class="container-lg"
+          :data="[[docsData.content]]"
+          :title="[[docsData.getTitle(docurl)]]">
+        <div class="row">
 
-        <div class="col-3 sidebar">
-          <div>
-            <ul class="menu-list">
-              <li :class-menu-item="[[true]]"
-                  :class-selected="[[data.url === docurl]]"
-                  :data="[[data.docs]]"
-                  :nestFor="[[data.children]]"
-                  :nestIn=".menu-list"
-                  :class-has-children="[[!!data.children]]">
-                <a class="menu-link" href="[[PAGEPATH + data.url]]">[[data.key]]</a>
-                <ul class="menu-list"/>
-              </li>
-            </ul>
+          <div class="col-3 sidebar">
+            <div>
+              <ul class="menu-list">
+                <li :class-menu-item="[[true]]"
+                    :class-selected="[[data.url === docurl]]"
+                    :data="[[data.docs]]"
+                    :nestFor="[[data.children]]"
+                    :nestIn=".menu-list"
+                    :class-has-children="[[!!data.children]]">
+                  <a class="menu-link" href="[[PAGEPATH + data.url]]">[[data.key]]</a>
+                  <ul class="menu-list"/>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div class="col main">
-          <marked-js :source="[[docsData.getValue(docurl)]]"/>
-        </div>
+          <div class="col main">
+            <marked-js :source="[[docsData.getValue(docurl)]]"/>
+          </div>
 
+        </div>
       </div>
     </div>
 

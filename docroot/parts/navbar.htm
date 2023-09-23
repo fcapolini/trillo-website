@@ -21,11 +21,41 @@
         margin-right: .66rem;
       }
     }
+
+    .nav-link {
+      color: #000 !important;
+    }
+    .nav-link:hover {
+      color: #000 !important;
+    }
+    .nav-link.active {
+      color: #888 !important;
+      font-weight: 500;
+    }
+    @media (prefers-color-scheme: dark) {
+      .navbar {
+        background-color: #000 !important;
+      }
+      .navbar a > svg {
+        fill: white;
+      }
+      .nav-link {
+        color: #fff !important;
+      }
+      .nav-link:hover {
+        color: #fff !important;
+      }
+      .nav-link.active {
+        color: #bbb !important;
+        font-weight: 500;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
   </style>
 
   <:define tag="app-navbar:nav"
            class="navbar navbar-expand-sm bg-body-tertiary"
-           data-bs-theme="dark"
            :container="container">
     <div class="[[container]]">
       <a class="navbar-brand" href="/index" aria-label="Trillo Homepage">
