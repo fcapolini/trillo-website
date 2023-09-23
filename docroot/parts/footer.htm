@@ -29,6 +29,20 @@
       }
     }
   </style>
+  <!--- sticky footer -->
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    .app-body {
+      flex: 1;
+    }
+  </style>
 
   <:define tag="app-footer" class="app-footer">
     <div class="container">
