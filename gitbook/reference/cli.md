@@ -10,6 +10,6 @@ trillo serve myapp
 # ... http://localhost:3000
 ```
 
-The `serve` option launches a [development server](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/server/README.md#development-mode) serving pages from the given directory, as an easy way to develop Trillo pages, and includes the ability to auto reload the browser on changes.
+The `serve` option launches a [development server](https://trillojs.dev/docs/reference/server#development-mode) serving pages from the given directory, as an easy way to develop Trillo pages, and includes the ability to auto reload the browser on changes.
 
 > The `trillo` command is only intended as a development tool.

@@ -8,7 +8,7 @@
 npm install -g trillo
 ```
 
-Once installed, we can use the [`trillo`](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/cli/README.md) command to start a [development server](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/server/README.md).
+Once installed, we can use the [`trillo`](https://trillojs.dev/docs/reference/cli) command to start a [development server](https://trillojs.dev/docs/reference/server#development-mode).
 
 ## Hello World
 
@@ -96,4 +96,4 @@ node index.js
 # ... START http://localhost:3001
 ```
 
-> When using Trillo in a project we can customize it and add our own services and middleware to the server. All options are documented in the [Server Reference](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/server/README.md).
+> When using Trillo in a project we can customize it and add our own services and middleware to the server. All options are documented in the [Server Reference](https://trillojs.dev/docs/reference/server).

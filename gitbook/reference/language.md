@@ -4,10 +4,10 @@ Trillo provides a declarative reactive language for implementing the Presenter i
 
 It extends HTML with:
 
-1. [logic values](https://reflectjs.gitbook.io/docs/reference/language#values),
-2. [reactive expressions](https://reflectjs.gitbook.io/docs/reference/language#expressions),
-3. [visibility scopes](https://reflectjs.gitbook.io/docs/reference/language#scopes),
-4. [scope methods](https://reflectjs.gitbook.io/docs/reference/language#methods).
+1. [logic values](language.md#values),
+2. [reactive expressions](language.md#expressions),
+3. [visibility scopes](language.md#scopes),
+4. [scope methods](language.md#methods).
 
 ## 1. Logic values <a href="#values" id="values"></a>
 
@@ -23,7 +23,7 @@ Logic values can be added to any HTML using `:`-prefixed attributes. These attri
 
 The output page won't have the `:msg` and `:did-init` attributes, it will have its own JavaScript code that will handle them. Specifically, the page root object — associated with tag `<html>` — is given an `msg` property whose value is the `"hello"` string.
 
-`did-init` is a [delegate method](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/runtime/README.md#did) that's executed when a tag's scope is initialized. In this example it simply logs the value of `msg`. This will happen in both the server at page delivery and in the client at page load.
+`did-init` is a [delegate method](https://trillojs.dev/docs/reference/runtime#did) that's executed when a tag's scope is initialized. In this example it simply logs the value of `msg`. This will happen in both the server at page delivery and in the client at page load.
 
 ### Non-string literals <a href="#non-string-literals" id="non-string-literals"></a>
 
@@ -51,7 +51,7 @@ The output page won't have the `:msg` and `:did-init` attributes, it will have i
 
 Logic values are JavaScript object properties and, as such, their value can be other than just strings. Since what's inside a `[[...]]` clause is JavaScript code, `count` will be assigned a number, `user` will be assigned an object, `fruit` will be assigned an array and `msg` will still be assigned a string albeit using a different syntax than in the previous example.
 
-> Trillo's [extended syntax](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/markup/README.md#attribute-values) for attributes makes for a comfortable way of expressing code. You can space things out as you would in a JavaScript source, use unescaped `<` and `>` characters, and use JavaScript comments to document things.
+> Trillo's [extended syntax](https://trillojs.dev/docs/reference/markup#attribute-values) for attributes makes for a comfortable way of expressing code. You can space things out as you would in a JavaScript source, use unescaped `<` and `>` characters, and use JavaScript comments to document things.
 
 ## 2. Reactive expressions <a href="#expressions" id="expressions"></a>
 

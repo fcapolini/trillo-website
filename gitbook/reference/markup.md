@@ -45,7 +45,7 @@ Sometimes we want our comments to stay private. Plus, by enforcing this rule, Tr
 
 ## Attribute names
 
-Attribute names starting with `:` are valid (they're used to declare [logic values](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/language/README.md)) although they won't directly appear in output pages.
+Attribute names starting with `:` are valid (they're used to declare [logic values](https://trillojs.dev/docs/reference/language#1-logic-values-)) although they won't directly appear in output pages.
 
 ```html
 <html :count=[[1]]>

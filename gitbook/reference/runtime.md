@@ -1,6 +1,6 @@
 # Runtime
 
-Trillo's runtime reserves special treatment to the following [logic values](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/language/README.md#values).
+Trillo's runtime reserves special treatment to the following [logic values](https://trillojs.dev/docs/reference/language#1-logic-values-).
 
 ## Special values
 
@@ -40,7 +40,7 @@ Values using special prefixes have special meanings based on the prefix itself. 
 
 ### attr
 
-Normal HTML attribute that have an [expression](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/language/README.md#expressions) in their value are available with this prefix in tag's [scope](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/language/README.md#scopes). E.g.:
+Normal HTML attribute that have an [expression](https://trillojs.dev/docs/reference/language#2-reactive-expressions-) in their value are available with this prefix in tag's [scope](https://trillojs.dev/docs/reference/language#3-visibility-scopes-). E.g.:
 
 ```html
 <html lang="[['en']]">
@@ -56,9 +56,9 @@ These values contain event listeners for DOM events. E.g.:
 <body :on-click="[[(ev) => ...]]">
 ```
 
-will assign the listener function to value on\_click in tag's [scope](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/language/README.md#scopes), and will register it with its underlying DOM element.
+will assign the listener function to value on\_click in tag's [scope](https://trillojs.dev/docs/reference/language#3-visibility-scopes-), and will register it with its underlying DOM element.
 
-Using `:on-` attributes for registering DOM event handlers is recommended, so scopes can be added and removed as needed, with their event listener properly registered and unregistered, when [replicating](runtime.md#data) scopes or when using [conditional blocks](https://github.com/reflectjs/reflectjs-doc/blob/main/markdown/reference/stdlib/README.md).
+Using `:on-` attributes for registering DOM event handlers is recommended, so scopes can be added and removed as needed, with their event listener properly registered and unregistered, when [replicating](https://trillojs.dev/docs/reference/runtime#data) scopes or when using [conditional blocks](https://trillojs.dev/docs/reference/stdlib#on-off).
 
 > `:on-` event listeners are not related to the legacy `on...` HTML attributes, and are implemented with `addEventListener()` behind the scenes.
 
