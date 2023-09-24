@@ -4,10 +4,10 @@ Trillo provides a declarative reactive language for implementing the Presenter i
 
 It extends HTML with:
 
-1. [logic values](language.md#values),
-2. [reactive expressions](language.md#expressions),
-3. [visibility scopes](language.md#scopes),
-4. [scope methods](language.md#methods).
+1. [logic values](https://trillojs.dev/docs/reference/language#1-logic-values-),
+2. [reactive expressions](https://trillojs.dev/docs/reference/language#2-reactive-expressions-),
+3. [visibility scopes](https://trillojs.dev/docs/reference/language#3-visibility-scopes-),
+4. [scope methods](https://trillojs.dev/docs/reference/language#4-scope-methods-).
 
 ## 1. Logic values <a href="#values" id="values"></a>
 
