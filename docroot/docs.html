@@ -59,6 +59,7 @@
 
     <app-navbar :container="container-lg"
                 data-bs-theme="light"
+                :data="[[docsData.content]]"
                 :getDataItem="[[function(data, key) {
                   for (let d of data.docs) {
                     if (d.key === key) {
