@@ -27,7 +27,7 @@
   <body :pathname="[[head.router.pathname.substring(URLPATH.length)]]"
         :docurl="[[pathname !== 'index' ? pathname : 'quick-start']]">
     <:data-source :aka="docsData"
-                  :url="/docs-data"
+                  :url="https://trillojs.dev/docs-data"
                   :getTitle="[[(url) => {
                     let ret = '';
                     const f = (dd) => {
