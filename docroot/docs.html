@@ -86,7 +86,8 @@
       </form> -->
     </app-navbar>
 
-    <div class="app-body docs">
+    <div class="app-body docs"
+         :data="[[docsData.content]]">
       <div :aka="main"
           class="container-lg"
           :title="[[docsData.getTitle(docurl)]]">
@@ -94,7 +95,7 @@
 
           <div class="col-3 sidebar">
             <div>
-              <ul class="menu-list" :data="[[docsData.content]]">
+              <ul class="menu-list">
                 <li :class-menu-item="[[true]]"
                     :class-selected="[[data.url === docurl]]"
                     :data="[[data.docs]]"
@@ -109,7 +110,7 @@
           </div>
 
           <div class="col main">
-            <marked-js :data="[[docsData.content]]" :source="[[docsData.getValue(docurl, data)]]"/>
+            <marked-js :source="[[docsData.getValue(docurl, data)]]"/>
           </div>
 
         </div>
