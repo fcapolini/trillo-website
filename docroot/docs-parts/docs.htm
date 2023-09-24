@@ -297,4 +297,16 @@
     }
   }
 </style>
+
+<:define tag="nav-dropdown:li"
+         class="nav-item dropdown"
+         :data="[[getDataItem(docsData.content, 'Topics')]]">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    [[data.key]]
+  </a>
+  <ul class="dropdown-menu">
+    <li :data="[[data.children]]"><a class="dropdown-item" href="/docs/[[data.url]]">[[data.key]]</a></li>
+  </ul>
+</:define>
+
 </lib>
