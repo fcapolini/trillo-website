@@ -64,9 +64,43 @@
       <li :slot="left" class="nav-item">
         <a :class-nav-link :class-active="[[docurl === 'quick-start']]" href="/docs/quick-start">Quick Start</a>
       </li>
-      <li :slot="left" class="nav-item">
+      <!-- <li :slot="left" class="nav-item">
         <a :class-nav-link :class-active="[[docurl !== 'quick-start']]" href="/docs/overview">Docs</a>
+      </li> -->
+
+      <li :slot="left" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Docs
+        </a>
+        <!-- <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul> -->
+        <ul class="dropdown-menu"
+            :data="[[flattenData(docsData.content.docs)]]"
+            :flattenData="[[function(docs) {
+              const ret = [];
+              for (let i of docs) {
+                if (i.children) {
+                  ret.push({ key: i.key });
+                  for (let j of i.children) {
+                    ret.push({ key: '- ' + j.key, val: j.val });
+                  }
+                } else {
+                  ret.push(i);
+                }
+              }
+              return { docs: ret };
+            }]]">
+          <li :class-selected="[[data.url === docurl]]"
+              :data="[[data.docs]]">
+            <a class="dropdown-item" href="[[PAGEPATH + 'docs/' + data.url]]">[[data.key]]</a>
+          </li>
+        </ul>
       </li>
+
       <!--- <form :slot="right" class="d-flex" role="search">
         <input class="form-control me-2"
                type="search"
@@ -78,13 +112,12 @@
     <div class="app-body docs">
       <div :aka="main"
           class="container-lg"
-          :data="[[docsData.content]]"
           :title="[[docsData.getTitle(docurl)]]">
         <div class="row">
 
           <div class="col-3 sidebar">
             <div>
-              <ul class="menu-list">
+              <ul class="menu-list" :data="[[docsData.content]]">
                 <li :class-menu-item="[[true]]"
                     :class-selected="[[data.url === docurl]]"
                     :data="[[data.docs]]"
