@@ -4,7 +4,7 @@ Using a traditional reactive web framework like [Angular](https://angular.io/), 
 
 Trillo is a groundbreaking alternative which strives for simplicity:
 
-1. it turns HTML itself into a [reactive language](https://docs.trillojs.dev/en/topics/reactivity),
+1. it turns HTML itself into a [reactive language](reactivity.md),
 2. it generates fully [indexable pages](https://docs.trillojs.dev/en/topics/indexability) out of the box,
 3. it lets you create your own [custom tags](https://docs.trillojs.dev/en/topics/reusability),
 4. it makes it easy to create your own [component libraries](https://docs.trillojs.dev/en/topics/kits).
