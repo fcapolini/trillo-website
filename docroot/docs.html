@@ -110,8 +110,10 @@
           </div>
 
           <div class="col main">
-            <marked-js :source="[[docsData.getValue(docurl, data)]]"/>
-          </div>
+          <div class="marked-js" :handle-data="[[
+            __dom.innerHTML = window.marked.parse(docsData.getValue(docurl, data))
+          ]]"></div>
+        </div>
 
         </div>
       </div>
