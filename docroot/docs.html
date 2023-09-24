@@ -25,7 +25,8 @@
     <:import src="docs-parts/docs.htm"/>
   </head>
   <body :pathname="[[head.router.pathname.substring(URLPATH.length)]]"
-        :docurl="[[pathname !== 'index' ? pathname : 'quick-start']]">
+        :handle-pathname="[[console.log(pathname)]]"
+        :docurl="[[pathname && pathname !== 'index' ? pathname : 'quick-start']]">
     <:data-source :aka="docsData"
                   :url="http://localhost:3000/docs-data"
                   :getTitle="[[(url) => {
