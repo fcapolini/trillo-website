@@ -115,6 +115,7 @@ new trillo.Server({
             } else if (dname.startsWith(dir) && fname === 'README.md') {
               dst.push({
                 key: name,
+                url: file.replace(/README.md$/, ''),
                 children: list(dname, [])
               })
             }

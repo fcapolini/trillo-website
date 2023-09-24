@@ -13,11 +13,6 @@
   .navbar {
     border-bottom: 1px solid #e6e6e6;
   }
-  @media (prefers-color-scheme: light) {
-    .nav-link.active {
-      color: black !important;
-    }
-  }
 
   .docs > div, .docs > div > .row {
     height: 100%;
@@ -90,7 +85,7 @@
     font-weight: bold;
   }
   .menu-item.selected > a {
-    color: #005cc5;
+    color: #F63B11;
   }
 
   .app-footer {
@@ -229,7 +224,7 @@
       background-color: rgba(236,239,241,.2);
     }
     .menu-item.selected {
-      background-color: rgba(245, 247, 249, .75);
+      background-color: rgba(245, 247, 249, .15);
     }
     li.menu-item.has-children > a {
       font-weight: 400;
@@ -239,7 +234,9 @@
       border-left: 1px solid rgba(255,255,255,.2);
     }
     .menu-item.selected > a {
-      color: #b34428;
+      /* color: #b34428; */
+      color: #f89d66;
+      font-weight: 800;
     }
     .marked-js {
       color: #e4e4e4;
@@ -301,7 +298,13 @@
 <:define tag="nav-dropdown:li"
          class="nav-item dropdown"
          :data="[[getDataItem(docsData.content, 'Topics')]]">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a :class-nav-link
+     :class-dropdown-toggle
+     :class-active="[[head.router.pathname.startsWith('/docs/' + data.url)]]"
+     href="#"
+     role="button"
+     data-bs-toggle="dropdown"
+     aria-expanded="false">
     [[data.key]]
   </a>
   <ul class="dropdown-menu">

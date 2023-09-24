@@ -25,13 +25,17 @@
 
     .nav-link {
       color: #000 !important;
+      padding: .2rem 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
     }
     .nav-link:hover {
       color: #000 !important;
     }
     .nav-link.active {
-      color: #888 !important;
+      /* color: #888 !important; */
       /* font-weight: 500; */
+      border-bottom-color: #F63B11;
     }
     @media (prefers-color-scheme: dark) {
       .navbar {
@@ -47,10 +51,10 @@
         color: #fff !important;
       }
       .nav-link.active {
-        color: #bbb !important;
+        /* color: #bbb !important; */
         /* font-weight: 500; */
-        cursor: default;
-        pointer-events: none;
+        /* cursor: default;
+        pointer-events: none; */
       }
       .navbar > .container > .navbar-toggler,
       .navbar > .container-lg > .navbar-toggler {
