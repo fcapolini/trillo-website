@@ -11,15 +11,13 @@
     <link rel="icon" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/assets/trillo-semi.png"/>
 
-    <!--- Google tag (gtag.js) -->
-    <!---<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YJYY38HRQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-5YJYY38HRQ');
-    </script>-->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M7GMLZWS');</script>
+    <!-- End Google Tag Manager -->
 
     <!--- https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
     <link href="/res/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +35,11 @@
     <:import src="parts/dark.htm"/>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7GMLZWS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <app-navbar :container="container-lg" data-bs-theme="light">
       <li :slot="left" class="nav-item">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
@@ -117,7 +120,7 @@
 
   <app-code><code>
   &lt;div :count=[[0]]
-      :did-init=[[
+       :did-init=[[
         setInterval(() => count++, 1000);
       ]]>
     Seconds: [[count]]

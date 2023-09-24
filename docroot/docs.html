@@ -10,6 +10,15 @@
     <title>[[title]]</title>
     <link rel="icon" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/assets/trillo-semi.png"/>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M7GMLZWS');</script>
+    <!-- End Google Tag Manager -->
+
     <!--- https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
     <link href="/res/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
     <!--- https://icons.getbootstrap.com -->
@@ -26,6 +35,12 @@
   </head>
   <body :pathname="[[head.router.pathname.substring(URLPATH.length)]]"
         :docurl="[[pathname && pathname !== 'index' ? pathname : 'quick-start']]">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7GMLZWS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <:data-source :aka="docsData"
                   :url="http://localhost:3000/docs-data"
                   :getTitle="[[(url) => {
