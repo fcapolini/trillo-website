@@ -109,10 +109,10 @@
             </div>
           </div>
 
-          <div class="col main">
-          <div class="marked-js" :handle-data="[[
-            __dom.innerHTML = window.marked.parse(docsData.getValue(docurl, data))
-          ]]"></div>
+          <div class="col main marked-js"
+               :handle-data="[[update()]]"
+               :handle-docurl="[[update()]]"
+               :update="[[() => __dom.innerHTML = window.marked.parse(docsData.getValue(docurl, data))]]">
         </div>
 
         </div>
