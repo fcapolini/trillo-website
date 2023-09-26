@@ -32,6 +32,7 @@
     <:import src="parts/hero.htm"/>
     <:import src="parts/card.htm"/>
     <:import src="parts/code.htm"/>
+    <:import src="parts/pagination.htm"/>
     <:import src="parts/footer.htm"/>
     <:import src="/.kit/bootstrap/parts/carousel.htm"/>
     <:import src="parts/dark.htm"/>
@@ -253,6 +254,12 @@
           </div>
         </div>
       </div>
+
+      <app-pagination>
+        <app-pagination-item :type="next" :text="Quick Start" :link="/docs/quick-start"/>
+        <app-pagination-item :type="next" :text="Overview" :link="/docs/concepts/overview"/>
+      </app-pagination>
+
     </div>
 
     <app-footer>
