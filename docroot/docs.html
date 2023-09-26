@@ -29,6 +29,7 @@
     <!--- <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" rel="stylesheet"> -->
     <:import src="parts/page.htm"/>
     <:import src="parts/navbar.htm"/>
+    <:import src="parts/pagination.htm"/>
     <:import src="parts/footer.htm"/>
     <:import src="parts/dark.htm"/>
     <:import src="docs-parts/highlight-js.htm"/>
@@ -37,8 +38,10 @@
   </head>
   <body :pathname="[[head.router.pathname.substring(URLPATH.length)]]"
         :docurl="[[pathname && pathname !== 'index' ? pathname : 'quick-start']]">
+
     <:data-source :aka="docsData"
                   :url="http://localhost:3000/docs-data"
+
                   :getTitle="[[(url) => {
                     let ret = '';
                     const f = (dd) => {
@@ -53,6 +56,7 @@
                     f(content.docs);
                     return ret;
                   }]]"
+
                   :getValue="[[(url) => {
                     let ret = '';
                     const f = (dd) => {
@@ -66,7 +70,8 @@
                     }
                     f(content.docs);
                     return ret;
-                  }]]"/>
+                  }]]"
+      />
 
     <app-navbar :container="container-lg"
                 data-bs-theme="light"
@@ -120,13 +125,23 @@
             </div>
           </div>
 
-          <div class="col main marked-js"
-               :handle-data="[[update()]]"
-               :handle-docurl="[[update()]]"
-               :update="[[() => __dom.innerHTML = window.marked.parse(docsData.getValue(docurl, data))]]">
-        </div>
+          <div class="col main marked-js">
+            <div class="marked-js"
+                 :handle-data="[[update()]]"
+                 :handle-docurl="[[update()]]"
+                 :update="[[() => __dom.innerHTML = window.marked.parse(docsData.getValue(docurl))]]" />
+            <app-pagination :handle-data="[[update()]]"
+                            :handle-docurl="[[update()]]"
+                            :update="[[() => {
+
+                            }]]">
+              <app-pagination-item :type="prev" :text="Quick Start"/>
+              <app-pagination-item :type="next" :text="Overview"/>
+            </app-pagination>
+          </div>
 
         </div>
+
       </div>
     </div>
 

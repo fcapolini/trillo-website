@@ -18,8 +18,19 @@
     border-bottom: 1px solid #e6e6e6;
   }
 
-  .docs > div, .docs > div > .row {
+  .docs > div,
+  .docs > div > .row
+  {
     height: 100%;
+  }
+
+  .docs .app-pagination {
+    transform: translateY(2rem);
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 1.1rem;
   }
 
   .sidebar {
@@ -71,7 +82,7 @@
     border-radius: 5px;
   }
   .menu-item:not(.selected) > a:hover {
-    background-color: rgba(236,239,241,1.00);
+    background-color: rgba(236,239,241,.5);
   }
 
   .menu-item.has-children > a {
@@ -85,7 +96,7 @@
   }
 
   .menu-item.selected {
-    background-color: rgb(245, 247, 249);
+    background-color: #ecf0f4;
     font-weight: bold;
   }
   .menu-item.selected > a {
@@ -225,10 +236,11 @@
       color: #f0f0f0;
     }
     .menu-item:not(.selected) > a:hover {
-      background-color: rgba(236,239,241,.2);
+      /* background-color: rgba(236,239,241,.2); */
+      background-color: rgba(54, 64, 80, .66);
     }
     .menu-item.selected {
-      background-color: rgba(245, 247, 249, .15);
+      background-color: #364050;
     }
     li.menu-item.has-children > a {
       font-weight: 400;
