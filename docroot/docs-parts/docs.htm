@@ -25,12 +25,17 @@
   }
 
   .docs .app-pagination {
-    transform: translateY(2rem);
+    transform: translateY(1rem);
     padding-top: 0rem;
     padding-bottom: 0rem;
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: 1.1rem;
+    margin-bottom: -1rem;
+  }
+  @media only screen and (min-width: 576px) {
+    .docs .app-pagination {
+      margin-bottom: -.5rem;
+    }
   }
 
   .sidebar {
