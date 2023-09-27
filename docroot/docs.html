@@ -130,13 +130,25 @@
                  :handle-data="[[update()]]"
                  :handle-docurl="[[update()]]"
                  :update="[[() => __dom.innerHTML = window.marked.parse(docsData.getValue(docurl))]]" />
-            <app-pagination :handle-data="[[update()]]"
+            <app-pagination :prev="[[null]]"
+                            :next="[[null]]"
+                            :handle-data="[[update()]]"
                             :handle-docurl="[[update()]]"
                             :update="[[() => {
-
+                              const list = [];
+                              const f = (a) => a.forEach(d => d.children ? f(d.children) : list.push(d));
+                              f(data.docs);
+                              let i = 0;
+                              for (; i < list.length && list[i].url !== docurl; i++);
+                              prev = (i > 0 ? list[i - 1] : null);
+                              next = (i < (list.length - 1) ? list[i + 1] : null);
                             }]]">
-              <app-pagination-item :type="prev" :text="Quick Start"/>
-              <app-pagination-item :type="next" :text="Overview"/>
+              <app-pagination-item :type="prev"
+                                   :text="[[prev && prev.key]]"
+                                   :link="[[prev && '/docs/' + prev.url]]" />
+              <app-pagination-item :type="next"
+                                   :text="[[next && next.key]]"
+                                   :link="[[next && '/docs/' + next.url]]" />
             </app-pagination>
           </div>
 
