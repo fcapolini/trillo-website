@@ -1,12 +1,12 @@
 # Overview
 
-Using a traditional reactive web framework like [Angular](https://angular.io/), [React](https://react.dev/) or [Vue.js](https://vuejs.org/) can be pretty involved.
+Using a traditional reactive web framework like [Angular](https://angular.io/), [React](https://react.dev/) or [Vue.js](https://vuejs.org/) makes web development more akin to desktop development. It requires a full software project for even the simpler projects, with tens of dependencies, build scripts and so on. Plus, you have go through a lot of documentation and code examples before you start to become familiar with how they work.
 
-Trillo is a groundbreaking alternative which strives for simplicity:
+Trillo is a groundbreaking alternative which tries to restore as much simplicity as possible while preserving the advantages of a reactive framework:
 
 1. it turns HTML itself into a [reactive language](https://trillojs.dev/docs/concepts/reactivity),
 2. it generates fully [indexable pages](https://trillojs.dev/docs/concepts/indexability) out of the box,
-3. it lets you create your own [custom tags](https://trillojs.dev/docs/concepts/reusability),
+3. it makes it trivial to create your own [custom tags](https://trillojs.dev/docs/concepts/reusability),
 4. it makes it easy to create your own [component libraries](https://trillojs.dev/docs/concepts/kits).
 
 It's implemented as a customizable [Express](https://expressjs.com/) server for [Node.js](https://nodejs.org/). It augments HTML with `:`-prefixed [attributes](https://trillojs.dev/docs/reference/language#1-logic-values-), `[[...]]` [expressions](https://trillojs.dev/docs/reference/language#2-reactive-expressions-), and `<:...>` [directives](https://trillojs.dev/docs/reference/preprocessor), and it's easy to pick up.

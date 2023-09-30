@@ -34,8 +34,6 @@ We can add a simple page...
 
 ...and open [http://localhost:3000](http://localhost:3000/) to see the seconds counter live.
 
-> If you look at the page source received by the browser you'll notice it contains the text "Seconds: 0". This shows that page logic is executed once in the server in order to deliver content-ready pages, and then transferred to the client to support local updates and user interaction: Trillo supports [isomorphism](https://en.wikipedia.org/wiki/Isomorphic\_JavaScript) out of the box.
-
 ## Use in a project
 
 Let's create a demo project:
@@ -74,22 +72,7 @@ new Server({
 });
 ```
 
-We can now create a page in `docroot/`:
-
-```html
-<!-- index.html -->
-<html>
-  <body>
-    Good [[
-      new Date().getHours() <= 12
-          ? 'morning'
-          : 'evening'
-    ]]!
-  <body>
-</html>
-```
-
-And we can run the project:
+We can now create a page in `docroot/` like shown above and run the project:
 
 ```sh
 node index.js
