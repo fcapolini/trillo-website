@@ -36,4 +36,6 @@ This page-specific code starts executing in the server, to provide the page with
 
 If you change e.g. `"red"` to `"blue"` in the first line you’ll see that, because we’re using Trillo’s development server, the browser is automatically refreshed after source changes.
 
+As you can see, reactivity in Trillo extends to CSS styles. While this shouldn't be overused, it makes for a much better integrated and cohesive programming model. There's no need for another tool and another syntax to preprocess your stylesheets.
+
 There is of course much more to reactivity than this first example can show. You can learn all there is to know in the [Reference](https://trillojs.dev/docs/reference/language).
