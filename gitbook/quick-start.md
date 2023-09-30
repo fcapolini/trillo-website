@@ -8,7 +8,7 @@
 npm install -g trillo
 ```
 
-Once installed, we can use the [`trillo`](https://trillojs.dev/docs/reference/cli) command to start a [development server](https://trillojs.dev/docs/reference/server#development-mode).
+Once installed, we can use the [`trillo serve`](https://trillojs.dev/docs/reference/cli) command to start a [development server](https://trillojs.dev/docs/reference/server#development-mode).
 
 ## Hello World
 
@@ -59,7 +59,7 @@ new trillo.Server({
 });
 ```
 
-In TypeScript we can use imports instead:
+In TypeScript (or ES6 code) we can use imports instead:
 
 ```ts
 // index.ts
