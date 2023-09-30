@@ -28,7 +28,9 @@ We can now serve the page with the `trillo serve myapp` command.
 
 This page displays a red button with text "Click to change this red color!". When you click it, it becomes green with text "Click to change this green color!". If you click it again it gets back to its initial state and so on.
 
-As you can see there's no `:`-prefixed attributes and no `[[color]]` blocks in the delivered page. Rather, there is some page-specific JavaScript code that implements their behaviour.
+As you can see, `:` values and `[[...]]` expressions are _reactive_, meaning that changes to values are automatically reflected in all expressions where they are referenced.
+
+In the delivered page there's no `:`-prefixed attributes and no `[[color]]` blocks. Rather, there is some page-specific JavaScript code that implements their behaviour.
 
 This page-specific code starts executing in the server, to provide the page with a valid initial content, and then it goes on in the client as needed to continue page logic execution.
 
