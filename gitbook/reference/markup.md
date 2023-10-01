@@ -64,4 +64,4 @@ Attribute values can contain multiline text and unescaped `<` and `>` characters
 </html>
 ```
 
-> Note that the `[[...]]` construct removes the need to escape either `'` or `"` in attribute values, which is convenient when writing JavaScript code. Code editors don't natively support it though, so you may choose to use `"[[...]]"` or `'[[...]]'` and avoid using the quotes inside the expressions, or escape them as per HTML specs, with `&quot;` and `&apos`.
+> Note that the `attribute=[[...]]` syntax removes the need to escape either `'` or `"` in attribute values, which is convenient when writing JavaScript code. Code editors don't natively support it though, so you may choose to use `"[[...]]"` or `'[[...]]'` and avoid using the quotes inside the expressions, or escape them as per HTML specs, with `&quot;` and `&apos`.
