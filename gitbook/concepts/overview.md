@@ -2,7 +2,7 @@
 
 Using traditional reactive web frameworks like [Angular](https://angular.io/), [React](https://react.dev/) or [Vue.js](https://vuejs.org/) makes web development more akin to desktop development.
 
-They requires a full blown set up for even the simpler projects, with dependencies, build scripts and so on. Plus, it takes quite a while to become proficient with their programming model.
+It's not immediate to get to grips with their programming model, and require a full blown set up for even the simpler projects.
 
 Trillo is a groundbreaking alternative which tries to restore as much simplicity as possible while preserving the advantages of a reactive framework:
 
