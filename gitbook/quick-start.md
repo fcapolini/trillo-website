@@ -2,7 +2,7 @@
 
 ## Installation
 
-> Trillo requires Node.js >= v.16. If you don't have it on you machine, download it from the [Node.js site](https://nodejs.org/en) and install it before proceeding.
+> Trillo requires Node.js v.16 or higher. If you don't have it on you machine, download it from the [Node.js site](https://nodejs.org/en) and install it before proceeding.
 
 ```sh
 npm install -g trillo
