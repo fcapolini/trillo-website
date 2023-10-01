@@ -22,4 +22,4 @@ Although it's a terse post, it still contains a rather long set of instructions,
 </html>
 ```
 
-TBD: data sources, data binding, replication, nesting, states
+TBD: data binding, states, routing

@@ -1,3 +1,3 @@
 # Kits
 
-TBD :include, page fragments
+TBD :import, .htm files, \<head> values
