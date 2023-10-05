@@ -14,7 +14,7 @@ Although it's a terse post, it still contains a rather long set of instructions,
 <html>
 <body>
   <div :count="[[0]]">
-    <h1>Hello from Server-Side Rendered React App!</h1>
+    <h1>Hello from Server-Side Rendered Trillo App!</h1>
     <p>Counter: [[count]]</p>
     <button :on-click="[[() => count++]]">Increment</button>
   </div>
