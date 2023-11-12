@@ -11,7 +11,7 @@ It extends HTML with:
 
 ## 1. Logic values <a href="#values" id="values"></a>
 
-Logic values can be added to any HTML using `:`-prefixed attributes. These attributes won't appear in output pages and values will be added to page-specific code.
+Logic values can be added to any HTML tag using `:`-prefixed attributes. These attributes won't appear in output pages and values will be added to page-specific code.
 
 ### String literals <a href="#string-literals" id="string-literals"></a>
 
